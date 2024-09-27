@@ -7,14 +7,14 @@
 		<span class="name">SAMUEL</span> <span class="ml-1 surname">BRUIN</span></a
 	>
 	<div class="flex">
-		<div class="bg-red-700 p-5 rounded-xl mr-16 nav-button">
-			<a href="#" class="text-sm">PROJECTS</a>
+		<div class="p-5 rounded-xl mr-6 nav-button hover:bg-green-200 transition-colors">
+			<a href="#" class="text-lg">PROJECTS</a>
 		</div>
-		<div class="bg-red-700 p-5 rounded-xl mr-16 nav-button">
-			<a href="#" class="text-sm">ABOUT</a>
+		<div class="p-5 rounded-xl mr-6 nav-button hover:bg-green-200 transition-colors">
+			<a href="#" class="text-lg">ABOUT</a>
 		</div>
-		<div class="bg-red-700 p-5 rounded-xl mr-4 nav-button">
-			<a href="#" class="text-sm">CONTACT</a>
+		<div class="p-5 rounded-xl mr-6 nav-button hover:bg-green-200 transition-colors">
+			<a href="#" class="text-lg">CONTACT</a>
 		</div>
 	</div>
 </nav>
@@ -68,7 +68,7 @@
 
 	nav a {
 		font-family: 'Montserrat';
-		font-weight: 400;
+		font-weight: 300;
 		color: #1a0000;
 	}
 
