@@ -3,6 +3,10 @@
   import Scene from './Scene.svelte'
 </script>
 
-<Canvas>
+<section class="home">
+Hello test!
+</section>
+
+<!-- <Canvas>
   <Scene />
-</Canvas>
+</Canvas> -->
