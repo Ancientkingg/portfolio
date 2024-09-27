@@ -13,7 +13,7 @@
 		<div class="bg-red-700 p-5 rounded-xl mr-16 nav-button">
 			<a href="#" class="text-sm">ABOUT</a>
 		</div>
-		<div class="bg-red-700 p-5 rounded-xl mr-16 nav-button">
+		<div class="bg-red-700 p-5 rounded-xl mr-4 nav-button">
 			<a href="#" class="text-sm">CONTACT</a>
 		</div>
 	</div>
