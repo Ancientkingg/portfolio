@@ -13,7 +13,7 @@ Hello world!
     justify-content: center;
     border-radius: 1rem;
     align-items: center;
-    height: 90vh;
+    height: 60vh;
     background-color: red;
   }
 </style>
