@@ -15,7 +15,7 @@
 </MediaQuery>
 
 <style>
-	.card {
+	:global(.card) {
 		margin: 0;
 		padding: 0;
 		display: flex;

@@ -8,7 +8,7 @@
 
 <section class="home">
 	<Card class="justify-end relative aspect-auto col-span-15 row-span-16">
-		<h1 class="w-fit pl-8 pb-24 self-start">Skibidi sigma toilet</h1>
+		<h1 class="w-fit pl-8 pb-24 self-start">A Software engineer</h1>
 		<CrownIcon class="absolute right-12 top-12 text-7xl" />
 	</Card>
 	<Card class="justify-center overflow-hidden aspect-auto col-span-9 row-span-16">
@@ -22,7 +22,7 @@
 	>
 		<h4 class="w-fit self-start pl-8 pt-8">Questions?</h4>
 		<h1 class="w-fit self-start pl-8 pb-12">Contact me</h1>
-		<IconLink class="absolute right-8 top-8 text-2xl" />
+		<IconLink class="card-link absolute right-8 top-8 text-2xl" />
 	</Card>
 	<Card class="justify-center col-span-12 aspect-auto row-span-4">6</Card>
 </section>
@@ -32,6 +32,31 @@
 </Canvas> -->
 
 <style>
+	:global(.card-link) {
+		transition:
+			right 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+			top 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+
+	:global(.card:hover .card-link) {
+		right: 1rem;
+		top: 1rem;
+    animation: bob 1s infinite ease-in-out;
+    animation-delay: 1.5s;
+	}
+
+  @keyframes bob {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(0.2rem) translateX(-0.2rem);
+    }
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+  }
+
 	img {
 		transition: opacity 0.5s;
 		animation-name: fadeIn;
