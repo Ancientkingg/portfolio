@@ -18,9 +18,9 @@
 		<img class="object-cover h-full w-auto" alt="Author portrait" src="/images/mirror.png" />
 	</Card>
 	<Card class="justify-center aspect-auto row-span-24 col-span-12">3 (photo gallery)</Card>
-	<Card class="relative justify-end col-span-12 row-span-12 aspect-[4/3] !p-8 !pb-10 !pr-24 leading-6">
+	<Card class="relative justify-end col-span-12 row-span-12 aspect-[4/3] !p-10 !pb-14 !pr-32 leading-6">
 		<img class="flag" alt="Indonesian flag" src="/images/flag_id_nl.png" />
-		<span class="font-[Gilroy] !tracking-tight">
+		<span class="font-[Gilroy] !tracking-tight text-lg">
 			Hello, I'm Samuel Bruin, a software engineer based in The Netherlands, but originally from
 			Indonesia.
 		</span>
@@ -54,10 +54,10 @@
 	.flag {
 		border-radius: 6px;
 		position: absolute;
-		width: 3rem;
+		width: 3.25rem;
 		opacity: 80%;
-		top: 2rem;
-		left: 2.25rem;
+		top: 2.25rem;
+		left: 2.75rem;
 	}
 
 	.social-link {
