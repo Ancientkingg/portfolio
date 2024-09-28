@@ -12,6 +12,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.254",
     "@sveltejs/adapter-auto": "^3.0.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
@@ -43,6 +44,7 @@
     "@threlte/rapier": "^2.0.1",
     "@threlte/theatre": "^2.1.8",
     "svelte-media-queries": "^1.6.2",
-    "three": "^0.159.0"
+    "three": "^0.159.0",
+    "unplugin-icons": "^0.19.3"
   }
 }

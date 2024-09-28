@@ -1,11 +1,142 @@
 @font-face {
 	font-family: 'Montserrat';
 	font-style: normal;
-	src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('opentype');
+	font-weight: 100 900;
+	src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
-    font-family: 'Gilroy';
-    font-style: normal;
-    src: url('/fonts/Gilroy-Light.otf') format('opentype');
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 100 900;
+	src: url('/fonts/Gilroy-Light.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 100;
+	font-style: normal;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-Thin.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 200;
+	font-style: normal;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 300;
+	font-style: normal;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 400;
+	font-style: normal;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 500;
+	font-style: normal;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-Medium.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 600;
+	font-style: normal;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 700;
+	font-style: normal;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 800;
+	font-style: normal;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 900;
+	font-style: normal;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-Black.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 100;
+	font-style: italic;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-ThinItalic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 200;
+	font-style: italic;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-ExtraLightItalic.ttf')
+		format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 300;
+	font-style: italic;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 400;
+	font-style: italic;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-Italic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 500;
+	font-style: italic;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 600;
+	font-style: italic;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-SemiBoldItalic.ttf')
+		format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 700;
+	font-style: italic;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 800;
+	font-style: italic;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-ExtraBoldItalic.ttf')
+		format('truetype');
+}
+
+@font-face {
+	font-family: 'Montserrat Alternates';
+	font-weight: 900;
+	font-style: italic;
+	src: url('/fonts/Montserrat-Alternates/MontserratAlternates-BlackItalic.ttf') format('truetype');
 }

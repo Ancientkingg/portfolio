@@ -1,29 +1,33 @@
-<script>
-	import MediaQuery from "svelte-media-queries";
-
+<script lang="ts">
+	import MediaQuery from 'svelte-media-queries';
 </script>
 
 <MediaQuery query="only screen and (min-width: 768px)" let:matches>
 	{#if matches}
-		<div class="card {$$restProps.class || ''}">
+		<div class="card {$$restProps.class || ''}" style={$$restProps.style}>
 			<slot></slot>
 		</div>
 	{:else}
-        <div class="card">
-            <slot></slot>
-        </div>
-    {/if}
+		<div class="{$$restProps.class || ''} card" style={$$restProps.style}>
+			<slot></slot>
+		</div>
+	{/if}
 </MediaQuery>
 
 <style>
 	.card {
+		margin: 0;
+		padding: 0;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
 		align-items: center;
-		background-color: theme("colors.green.400");
+		background-color: theme('colors.green.300');
 		border-radius: 1.5rem;
-		grid-column: span 6;
-		grid-row: span 6;
-		aspect-ratio: 4/3;
+		/* grid-column: span 12; */
+		/* grid-row: span 12; */
+		/* aspect-ratio: 4/3; */
+
+		font-family: 'Montserrat Alternates';
+		letter-spacing: -2px;
 	}
 </style>

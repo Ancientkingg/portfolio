@@ -2,36 +2,38 @@
 	import '../app.css';
 </script>
 
-<nav class="flex justify-between items-center bg-green-200 h-24 rounded-3xl mb-4 px-10">
+<nav class="flex justify-between items-center bg-green-300 h-24 rounded-3xl mb-5 px-10">
 	<a href="https://github.com/ancientkingg" class="text-2xl">
 		<span class="name">SAMUEL</span> <span class="ml-1 surname">BRUIN</span></a
 	>
-	<div class="flex">
-		<div class="p-5 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
+	<!-- <div class="flex">
+		<div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
 			<a href="#" class="text-lg">PROJECTS</a>
 		</div>
-		<div class="p-5 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
+		<div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
 			<a href="#" class="text-lg">ABOUT</a>
 		</div>
-		<div class="p-5 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
+		<div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
 			<a href="#" class="text-lg">CONTACT</a>
 		</div>
-	</div>
+	</div> -->
 </nav>
 
 <slot></slot>
 
 <style lang="postcss">
-	@import '/static/style/navbar.css';
+	/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+	/* @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+	/* @import url('https://fonts.cdnfonts.com/css/gilroy-bold'); */
 	@import '/static/style/fonts.css';
 
 	.surname {
 		display: inline-block;
-		font-weight: 500;
-		color: #1a0000;
+		font-weight: 400;
+		color: theme('colors.gray.900');
 		-webkit-text-stroke-width: 1px;
-		-webkit-text-stroke-color: #1a0000;
-		-webkit-text-fill-color: #1a0000;
+		-webkit-text-stroke-color: theme('colors.gray.900');
+		-webkit-text-fill-color: theme('colors.gray.900');
 		letter-spacing: 0px;
 		font-style: normal;
 		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -39,37 +41,37 @@
 
 	.name {
 		display: inline-block;
-		transform: skewX(-20deg);
+		transform: skewX(-15deg);
 		font-family: 'Montserrat';
 		font-weight: 200;
-		color: #1a0000;
+		color: theme('colors.gray.900');
 		letter-spacing: -1px;
 		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 
 	a:hover .name {
 		transform: skewX(0deg);
-		font-weight: 500;
-		color: #1a0000;
+		font-weight: 400;
+		color: theme('colors.gray.900');
 		-webkit-text-stroke-width: 1px;
-		-webkit-text-stroke-color: #1a0000;
-		-webkit-text-fill-color: #1a0000;
+		-webkit-text-stroke-color: theme('colors.gray.900');
+		-webkit-text-fill-color: theme('colors.gray.900');
 		letter-spacing: -1px;
 		font-style: normal;
 	}
 
 	a:hover .surname {
-		transform: skewX(-20deg);
+		transform: skewX(-15deg);
 		font-weight: 200;
 		-webkit-text-stroke-width: 0px;
-		color: #1a0000;
+		color: theme('colors.gray.900');
 		letter-spacing: -1px;
 	}
 
 	nav a {
 		font-family: 'Montserrat';
 		font-weight: 300;
-		color: #1a0000;
+		color: theme('colors.gray.900');
 	}
 
 	.nav-button a {
@@ -82,10 +84,17 @@
 	}
 
 	:global(body) {
-		margin-top: 1.5rem;
-		margin-bottom: 1.5rem;
-		margin-left: 2rem;
-		margin-right: 2rem;
-		background-color: rgb(220 252 231);
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		margin-left: 8rem;
+		margin-right: 8rem;
+		background-color: theme('colors.green.100');
+	}
+
+	@media only screen and (max-width: 786px) {
+		:global(body) {
+			margin-left: 2rem;
+			margin-right: 2rem;
+		}
 	}
 </style>
