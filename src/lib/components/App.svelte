@@ -3,7 +3,10 @@
 	import Scene from './Scene.svelte';
 	import Card from './Card.svelte';
 	import CrownIcon from './CrownIcon.svelte';
-	import IconLink from 'virtual:icons/line-md/external-link';
+	import LinkIcon from 'virtual:icons/line-md/external-link';
+	import LinkedInIcon from 'virtual:icons/line-md/linkedin';
+	import GithubIcon from 'virtual:icons/line-md/github';
+	import EmailIcon from 'virtual:icons/line-md/email-opened';
 </script>
 
 <section class="home">
@@ -14,17 +17,27 @@
 	<Card class="justify-center overflow-hidden aspect-auto col-span-9 row-span-16">
 		<img class="object-cover h-full w-auto" alt="Author portrait" src="/images/mirror.png" />
 	</Card>
-	<Card class="justify-center aspect-auto row-span-24 col-span-12">3</Card>
-	<Card class="justify-center col-span-12 row-span-12 aspect-[4/3]">4</Card>
+	<Card class="justify-center aspect-auto row-span-24 col-span-12">3 (photo gallery)</Card>
+	<Card class="justify-center col-span-12 row-span-12 aspect-[4/3]">4 (description)</Card>
 	<Card
 		class="justify-between relative col-span-12 row-span-12 aspect-[4/3]"
 		style="filter: saturate(1.5);"
 	>
 		<h4 class="w-fit self-start pl-8 pt-8">Questions?</h4>
 		<h1 class="w-fit self-start pl-8 pb-12">Contact me</h1>
-		<IconLink class="card-link absolute right-8 top-8 text-2xl" />
+		<LinkIcon class="card-link absolute right-8 top-8 text-2xl" />
 	</Card>
-	<Card class="justify-center col-span-12 aspect-auto row-span-4">6</Card>
+	<Card class="!flex-row justify-evenly col-span-12 aspect-auto row-span-4">
+		<a class="social-link" href="#">
+			<LinkedInIcon class="text-green-950 text-3xl" />
+		</a>
+		<a class="social-link" href="#">
+			<GithubIcon class="text-green-950 text-3xl" />
+		</a>
+		<a class="social-link" href="#">
+			<EmailIcon class="text-green-950 text-3xl" />
+		</a>
+	</Card>
 </section>
 
 <!-- <Canvas>
@@ -32,6 +45,14 @@
 </Canvas> -->
 
 <style>
+	.social-link {
+		padding: 2rem;
+	}
+
+	.social-link:hover {
+		animation: bob 1s infinite ease-in-out;
+	}
+
 	:global(.card-link) {
 		transition:
 			right 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
@@ -39,23 +60,34 @@
 	}
 
 	:global(.card:hover .card-link) {
-		right: 1rem;
-		top: 1rem;
-    animation: bob 1s infinite ease-in-out;
-    animation-delay: 1.5s;
+		right: 1.5rem;
+		top: 1.5rem;
+		animation: bob-diagonal 1s infinite ease-in-out;
 	}
 
-  @keyframes bob {
-    0% {
-      transform: translateY(0) translateX(0);
-    }
-    50% {
-      transform: translateY(0.2rem) translateX(-0.2rem);
-    }
-    100% {
-      transform: translateY(0) translateX(0);
-    }
-  }
+	@keyframes bob {
+		0% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-0.2rem);
+		}
+		100% {
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes bob-diagonal {
+		0% {
+			transform: translateY(0) translateX(0);
+		}
+		50% {
+			transform: translateY(-0.2rem) translateX(0.2rem);
+		}
+		100% {
+			transform: translateY(0) translateX(0);
+		}
+	}
 
 	img {
 		transition: opacity 0.5s;

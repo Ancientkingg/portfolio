@@ -6,17 +6,17 @@
 	<a href="https://github.com/ancientkingg" class="text-2xl">
 		<span class="name">SAMUEL</span> <span class="ml-1 surname">BRUIN</span></a
 	>
-	<!-- <div class="flex">
+	<div class="flex">
 		<div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
 			<a href="#" class="text-lg">PROJECTS</a>
 		</div>
-		<div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
+		<!-- <div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
 			<a href="#" class="text-lg">ABOUT</a>
 		</div>
 		<div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
 			<a href="#" class="text-lg">CONTACT</a>
-		</div>
-	</div> -->
+		</div> -->
+	</div>
 </nav>
 
 <slot></slot>

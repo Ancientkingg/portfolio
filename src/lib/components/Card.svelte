@@ -28,6 +28,6 @@
 		/* aspect-ratio: 4/3; */
 
 		font-family: 'Montserrat Alternates';
-		letter-spacing: -2px;
+		letter-spacing: -1px;
 	}
 </style>
