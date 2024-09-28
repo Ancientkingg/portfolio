@@ -26,10 +26,10 @@
 		>3 (photo gallery)</Card
 	>
 	<Card
-		class="relative justify-end md:col-span-12 md:row-span-12 aspect:auto md:aspect-[4/3] !p-10 !pb-14 !pr-32 leading-6 col-span-12 row-span-9"
+		class="relative justify-end md:col-span-12 md:row-span-12 aspect:auto md:aspect-[4/3] leading-6 col-span-12 row-span-9"
 	>
 		<img class="flag" alt="Indonesian flag" src="/images/flag_id_nl.png" />
-		<span class="font-[Gilroy] !tracking-tight text-lg">
+		<span class="font-[Gilroy] !tracking-tight text-lg p-10 pb-14 pr-32">
 			Hello, I'm Samuel Bruin, a software engineer based in The Netherlands, but originally from
 			Indonesia.
 		</span>
