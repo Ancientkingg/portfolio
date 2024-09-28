@@ -69,7 +69,6 @@
 		row-gap: 1.25rem;
 
 		border-radius: 1.5rem;
-		/* background-color: green; */
 	}
 
 	@media only screen and (max-width: 1200px) {

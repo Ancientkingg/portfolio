@@ -29,35 +29,28 @@
 
 	.surname {
 		display: inline-block;
-		font-weight: 400;
+		font-weight: 600;
 		color: theme('colors.gray.900');
-		-webkit-text-stroke-width: 1px;
-		-webkit-text-stroke-color: theme('colors.gray.900');
-		-webkit-text-fill-color: theme('colors.gray.900');
-		letter-spacing: 0px;
 		font-style: normal;
 		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		letter-spacing: -1px;
 	}
 
 	.name {
 		display: inline-block;
 		transform: skewX(-15deg);
 		font-family: 'Montserrat';
-		font-weight: 200;
 		color: theme('colors.gray.900');
-		letter-spacing: -1px;
 		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		letter-spacing: -1px;
 	}
 
 	a:hover .name {
 		transform: skewX(0deg);
-		font-weight: 400;
 		color: theme('colors.gray.900');
-		-webkit-text-stroke-width: 1px;
-		-webkit-text-stroke-color: theme('colors.gray.900');
-		-webkit-text-fill-color: theme('colors.gray.900');
-		letter-spacing: -1px;
+		font-weight: 600;
 		font-style: normal;
+		letter-spacing: -1px;
 	}
 
 	a:hover .surname {
