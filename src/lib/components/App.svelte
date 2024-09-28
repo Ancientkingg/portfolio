@@ -10,15 +10,24 @@
 </script>
 
 <section class="home">
-	<Card class="justify-end relative aspect-auto col-span-15 row-span-16">
+	<Card
+		class="justify-end relative md:aspect-auto md:col-span-15 md:row-span-16 col-span-12 row-span-12 aspect-[4/3]"
+	>
 		<h1 class="w-fit pl-8 pb-24 self-start !font-semibold">A Software engineer</h1>
 		<CrownIcon class="absolute right-12 top-12 text-7xl" />
 	</Card>
-	<Card class="justify-center overflow-hidden aspect-auto col-span-9 row-span-16">
+	<Card
+		class="justify-center overflow-hidden md:aspect-auto md:col-span-9 md:row-span-16  col-span-12 row-span-12 aspect-[4/3]"
+	>
 		<img class="object-cover h-full w-auto" alt="Author portrait" src="/images/mirror.png" />
 	</Card>
-	<Card class="justify-center aspect-auto row-span-24 col-span-12">3 (photo gallery)</Card>
-	<Card class="relative justify-end col-span-12 row-span-12 aspect-[4/3] !p-10 !pb-14 !pr-32 leading-6">
+	<Card
+		class="justify-center md:aspect-auto md:row-span-24 md:col-span-12 col-span-12 row-span-12 aspect-[4/3]"
+		>3 (photo gallery)</Card
+	>
+	<Card
+		class="relative justify-end md:col-span-12 md:row-span-12 aspect:auto md:aspect-[4/3] !p-10 !pb-14 !pr-32 leading-6 col-span-12 row-span-9"
+	>
 		<img class="flag" alt="Indonesian flag" src="/images/flag_id_nl.png" />
 		<span class="font-[Gilroy] !tracking-tight text-lg">
 			Hello, I'm Samuel Bruin, a software engineer based in The Netherlands, but originally from
@@ -26,14 +35,16 @@
 		</span>
 	</Card>
 	<Card
-		class="justify-between relative col-span-12 row-span-12 aspect-[4/3]"
+		class="justify-between relative md:col-span-12 md:row-span-12 col-span-12 row-span-9"
 		style="filter: saturate(1.5);"
 	>
 		<h4 class="w-fit self-start pl-8 pt-8">Questions?</h4>
 		<h1 class="w-fit self-start pl-8 pb-12">Contact me</h1>
 		<LinkIcon class="card-link absolute right-8 top-8 text-2xl" />
 	</Card>
-	<Card class="!flex-row justify-evenly col-span-12 aspect-auto row-span-4">
+	<Card
+		class="!flex-row justify-evenly col-span-12 aspect-auto row-span-4"
+	>
 		<a class="social-link" href="https://www.linkedin.com/in/samuelbruin" target="_blank">
 			<LinkedInIcon class="text-green-950 text-3xl" />
 		</a>
@@ -62,8 +73,8 @@
 
 	.social-link {
 		padding: 2rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
 	}
 
 	.social-link:hover {
