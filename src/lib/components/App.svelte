@@ -11,14 +11,20 @@
 
 <section class="home">
 	<Card class="justify-end relative aspect-auto col-span-15 row-span-16">
-		<h1 class="w-fit pl-8 pb-24 self-start">A Software engineer</h1>
+		<h1 class="w-fit pl-8 pb-24 self-start !font-semibold">A Software engineer</h1>
 		<CrownIcon class="absolute right-12 top-12 text-7xl" />
 	</Card>
 	<Card class="justify-center overflow-hidden aspect-auto col-span-9 row-span-16">
 		<img class="object-cover h-full w-auto" alt="Author portrait" src="/images/mirror.png" />
 	</Card>
 	<Card class="justify-center aspect-auto row-span-24 col-span-12">3 (photo gallery)</Card>
-	<Card class="justify-center col-span-12 row-span-12 aspect-[4/3]">4 (description)</Card>
+	<Card class="relative justify-end col-span-12 row-span-12 aspect-[4/3] !p-8 !pb-10 !pr-24 leading-6">
+		<img class="flag" alt="Indonesian flag" src="/images/flag_id_nl.png" />
+		<span class="font-[Gilroy] !tracking-tight">
+			Hello, I'm Samuel Bruin, a software engineer based in The Netherlands, but originally from
+			Indonesia.
+		</span>
+	</Card>
 	<Card
 		class="justify-between relative col-span-12 row-span-12 aspect-[4/3]"
 		style="filter: saturate(1.5);"
@@ -28,13 +34,13 @@
 		<LinkIcon class="card-link absolute right-8 top-8 text-2xl" />
 	</Card>
 	<Card class="!flex-row justify-evenly col-span-12 aspect-auto row-span-4">
-		<a class="social-link" href="#">
+		<a class="social-link" href="https://www.linkedin.com/in/samuelbruin" target="_blank">
 			<LinkedInIcon class="text-green-950 text-3xl" />
 		</a>
-		<a class="social-link" href="#">
+		<a class="social-link" href="https://github.com/ancientkingg" target="_blank">
 			<GithubIcon class="text-green-950 text-3xl" />
 		</a>
-		<a class="social-link" href="#">
+		<a class="social-link" href="mailto: samuelmbruin@yahoo.com">
 			<EmailIcon class="text-green-950 text-3xl" />
 		</a>
 	</Card>
@@ -45,8 +51,19 @@
 </Canvas> -->
 
 <style>
+	.flag {
+		border-radius: 6px;
+		position: absolute;
+		width: 3rem;
+		opacity: 80%;
+		top: 2rem;
+		left: 2.25rem;
+	}
+
 	.social-link {
 		padding: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 	}
 
 	.social-link:hover {

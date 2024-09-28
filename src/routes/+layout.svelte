@@ -84,7 +84,7 @@
 		background-color: theme('colors.green.100');
 	}
 
-	@media only screen and (max-width: 786px) {
+	@media only screen and (max-width: 900px) {
 		:global(body) {
 			margin-left: 2rem;
 			margin-right: 2rem;
