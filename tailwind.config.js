@@ -6,6 +6,7 @@ export default {
       gridColumn: {
         'span-15': 'span 15 / span 15',
         'span-16': 'span 16 / span 16',
+        'span-24': 'span 24 / span 24',
       },
       gridRow: {
         'span-15': 'span 15 / span 15',

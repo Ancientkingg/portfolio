@@ -43,7 +43,7 @@
 		<LinkIcon class="card-link absolute right-8 top-8 text-2xl" />
 	</Card>
 	<Card
-		class="!flex-row justify-evenly col-span-12 aspect-auto row-span-4"
+		class="!flex-row justify-evenly col-span-12 aspect-auto row-span-4 md:col-span-24 xl:col-span-12"
 	>
 		<a class="social-link" href="https://www.linkedin.com/in/samuelbruin" target="_blank">
 			<LinkedInIcon class="text-green-950 text-3xl" />
@@ -156,7 +156,7 @@
 		border-radius: 1.5rem;
 	}
 
-	@media only screen and (max-width: 1200px) {
+	@media only screen and (max-width: 1280px) {
 		.home {
 			grid-template-columns: repeat(24, minmax(0, 1fr));
 		}
