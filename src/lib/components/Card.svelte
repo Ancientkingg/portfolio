@@ -43,7 +43,7 @@
 	}
 
 	.card:hover .inline-border {
-		border: 3px solid theme('colors.green.500');
+		border: 4px solid theme('colors.green.200');
         opacity: 70%;
 	}
 </style>
