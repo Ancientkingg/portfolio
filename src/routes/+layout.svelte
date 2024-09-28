@@ -2,7 +2,7 @@
 	import '../app.css';
 </script>
 
-<nav class="flex justify-between items-center bg-green-200 h-24 rounded-2xl mb-4 px-10">
+<nav class="flex justify-between items-center bg-green-200 h-24 rounded-3xl mb-4 px-10">
 	<a href="https://github.com/ancientkingg" class="text-2xl">
 		<span class="name">SAMUEL</span> <span class="ml-1 surname">BRUIN</span></a
 	>
@@ -27,7 +27,7 @@
 
 	.surname {
 		display: inline-block;
-		font-weight: 600;
+		font-weight: 500;
 		color: #1a0000;
 		-webkit-text-stroke-width: 1px;
 		-webkit-text-stroke-color: #1a0000;
@@ -49,7 +49,7 @@
 
 	a:hover .name {
 		transform: skewX(0deg);
-		font-weight: 600;
+		font-weight: 500;
 		color: #1a0000;
 		-webkit-text-stroke-width: 1px;
 		-webkit-text-stroke-color: #1a0000;
@@ -86,5 +86,6 @@
 		margin-bottom: 1.5rem;
 		margin-left: 2rem;
 		margin-right: 2rem;
+		background-color: rgb(220 252 231);
 	}
 </style>

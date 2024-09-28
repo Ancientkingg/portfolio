@@ -42,6 +42,7 @@
     "@threlte/flex": "^1.0.3",
     "@threlte/rapier": "^2.0.1",
     "@threlte/theatre": "^2.1.8",
+    "svelte-media-queries": "^1.6.2",
     "three": "^0.159.0"
   }
 }
