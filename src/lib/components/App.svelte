@@ -29,7 +29,7 @@
 		<div class="flex flex-wrap w-fit pl-[9%] pb-12 self-start pr-8 font-[Montserrat] mt-[30%]">
 			<h1 class="text-5xl !font-medium underline pt-1 opacity-0" bind:this={someone}>Someone</h1>
 			<h1 class="text-5xl !font-medium pt-1 opacity-0">&nbsp;</h1>
-			<h1 class="text-5xl !font-thin italic pt-1 opacity-0" bind:this={who}>who&nbsp;</h1>
+			<h1 class="text-5xl !font-thin italic pt-1 opacity-0" bind:this={who}>who&nbsp;&nbsp;</h1>
 			{#if !browser}
 				<h1 class="text-5xl !font-bold italic pt-1 opacity-0">likes to code.</h1>
 			{:else}
