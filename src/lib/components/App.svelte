@@ -7,15 +7,34 @@
 	import LinkedInIcon from 'virtual:icons/line-md/linkedin';
 	import GithubIcon from 'virtual:icons/line-md/github';
 	import EmailIcon from 'virtual:icons/line-md/email-opened';
+	import SomeoneQuote from './SomeoneQuote.svelte';
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
+
+	let someone: HTMLElement;
+	let who: HTMLElement;
+
+	onMount(() => {
+		someone.classList.add('fadeIn');
+		someone.classList.remove('opacity-0');
+		who.classList.add('fadeIn');
+		who.classList.remove('opacity-0');
+	});
 </script>
 
 <section class="home">
 	<Card
-		class="justify-end relative md:aspect-auto md:col-span-15 md:row-span-16 col-span-12 row-span-12 aspect-[4/3]"
+		class="justify-center relative md:aspect-auto md:col-span-15 md:row-span-16 col-span-12 row-span-12 aspect-[4/3]"
 	>
-		<div class="flex w-fit pl-8 pb-24 self-start pr-8 font-[Montserrat]">
-			<h1 class="!font-medium">Someone&nbsp;</h1>
-			<h1 class="!font-thin italic">who</h1>
+		<div class="flex flex-wrap w-fit pl-[9%] pb-12 self-start pr-8 font-[Montserrat] mt-[30%]">
+			<h1 class="text-5xl !font-medium underline pt-1 opacity-0" bind:this={someone}>Someone</h1>
+			<h1 class="text-5xl !font-medium pt-1 opacity-0">&nbsp;</h1>
+			<h1 class="text-5xl !font-thin italic pt-1 opacity-0" bind:this={who}>who&nbsp;</h1>
+			{#if !browser}
+				<h1 class="text-5xl !font-bold italic pt-1 opacity-0">likes to code.</h1>
+			{:else}
+				<SomeoneQuote />
+			{/if}
 		</div>
 		<CrownIcon class="absolute right-12 top-12 text-7xl" />
 	</Card>
@@ -136,13 +155,13 @@
 		}
 	}
 
-	h1 {
+	:global(h1) {
 		font-size: 3rem;
 		line-height: 1;
 		font-weight: 500;
 	}
 
-	h4 {
+	:global(h4) {
 		font-size: 1.25rem;
 		line-height: 1.75rem;
 		font-weight: 300;

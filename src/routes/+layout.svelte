@@ -90,4 +90,20 @@
 			margin-right: 2rem;
 		}
 	}
+
+	:global(.fadeIn) {
+		transition: opacity 0.5s;
+		animation-name: fadeIn;
+		animation-timing-function: ease-in-out;
+		animation-duration: 1.5s;
+	}
+
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 </style>
