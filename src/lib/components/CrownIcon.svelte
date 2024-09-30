@@ -17,29 +17,37 @@
 	const crownEmojis = [Crown3, Crown6, Crown11, Crown12];
 
 	import { nextRandom } from '$lib/random';
+	import { onMount } from 'svelte';
 
 	let crown = crowns[Math.floor(nextRandom() * crowns.length)];
 	let crownEmoji = crownEmojis[Math.floor(nextRandom() * crownEmojis.length)];
 	let emojiOrNot = nextRandom() < crownEmojis.length / (crownEmojis.length + crowns.length);
+
+	let crownIcon: HTMLSpanElement;
+
+	onMount(() => {
+		crownIcon.classList.add('fadeIn');
+		crownIcon.classList.remove('opacity-0');
+	});
 </script>
 
 <div>
 	{#if emojiOrNot}
-		<span
-			class={$$restProps.class || ''}
+		<span bind:this={crownIcon}
+			class="{$$restProps.class || ''} opacity-0"
 			style="filter: invert(42%) sepia(94%) saturate(583%) hue-rotate(95deg) brightness(96%) contrast(83%);"
 		>
 			{@html crown}
 		</span>
 	{:else}
-		<span class={$$restProps.class || ''}>
+		<span bind:this={crownIcon} class="{$$restProps.class || ''} opacity-0">
 			{@html crownEmoji}
 		</span>
 	{/if}
 </div>
 
 <style>
-	span {
+	.fadeIn {
 		transition: opacity 0.5s;
 		animation-name: fadeIn;
 		animation-timing-function: ease-in-out;
