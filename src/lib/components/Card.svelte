@@ -40,6 +40,7 @@
         border-radius: 1.5rem;
         transition: border 0.1s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.4s;
         opacity: 0%;
+		pointer-events: none;
 	}
 
 	.card:hover .inline-border {

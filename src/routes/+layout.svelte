@@ -1,5 +1,11 @@
-<script>
+<script lang="ts">
 	import '../app.css';
+
+	import { setGenerator, seeded, usingMath } from '$lib/random';
+
+	export let data;
+
+	setGenerator(data.seed.length > 0 ? seeded(data.seed) : usingMath());
 </script>
 
 <nav class="flex justify-between items-center bg-green-300 h-24 rounded-3xl mb-5 px-10">
@@ -10,21 +16,15 @@
 		<div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
 			<a href="#" class="text-lg">PROJECTS</a>
 		</div>
-		<!-- <div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
-			<a href="#" class="text-lg">ABOUT</a>
-		</div>
 		<div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
-			<a href="#" class="text-lg">CONTACT</a>
-		</div> -->
+			<a href="#" class="text-lg">CV</a>
+		</div>
 	</div>
 </nav>
 
 <slot></slot>
 
 <style lang="postcss">
-	/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
-	/* @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
-	/* @import url('https://fonts.cdnfonts.com/css/gilroy-bold'); */
 	@import '/static/style/fonts.css';
 
 	.surname {

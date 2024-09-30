@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
 	import Crown1 from 'virtual:icons/ph/crown?raw';
 	import Crown2 from 'virtual:icons/mdi/crown?raw';
 	import Crown3 from 'virtual:icons/twemoji/crown?raw';
@@ -18,16 +16,11 @@
 
 	const crownEmojis = [Crown3, Crown6, Crown11, Crown12];
 
-	let crown: typeof Crown1 | string = '';
-	let crownEmoji: typeof Crown1 | string = '';
-	let emojiOrNot: boolean = false;
+	import { nextRandom } from '$lib/random';
 
-	onMount(() => {
-		crown = crowns[Math.floor(Math.random() * crowns.length)];
-		crownEmoji = crownEmojis[Math.floor(Math.random() * crownEmojis.length)];
-
-		emojiOrNot = Math.random() < crownEmojis.length / (crownEmojis.length + crowns.length);
-	});
+	let crown = crowns[Math.floor(nextRandom() * crowns.length)];
+	let crownEmoji = crownEmojis[Math.floor(nextRandom() * crownEmojis.length)];
+	let emojiOrNot = nextRandom() < crownEmojis.length / (crownEmojis.length + crowns.length);
 </script>
 
 <div>

@@ -13,7 +13,10 @@
 	<Card
 		class="justify-end relative md:aspect-auto md:col-span-15 md:row-span-16 col-span-12 row-span-12 aspect-[4/3]"
 	>
-		<h1 class="w-fit pl-8 pb-24 self-start !font-semibold">A Software engineer</h1>
+		<div class="flex w-fit pl-8 pb-24 self-start pr-8 font-[Montserrat]">
+			<h1 class="!font-medium">Someone&nbsp;</h1>
+			<h1 class="!font-thin italic">who</h1>
+		</div>
 		<CrownIcon class="absolute right-12 top-12 text-7xl" />
 	</Card>
 	<Card
@@ -29,7 +32,7 @@
 		class="relative justify-end md:col-span-12 md:row-span-12 aspect:auto md:aspect-[4/3] leading-6 col-span-12 row-span-9"
 	>
 		<img class="flag" alt="Indonesian flag" src="/images/flag_id_nl.png" />
-		<span class="font-[Gilroy] !tracking-tight text-lg p-10 pb-14 pr-32">
+		<span class="font-[Gilroy] !tracking-normal text-lg p-10 pb-14 pr-32">
 			Hello, I'm Samuel Bruin, a software engineer based in The Netherlands, but originally from
 			Indonesia.
 		</span>
@@ -143,6 +146,10 @@
 		font-size: 1.25rem;
 		line-height: 1.75rem;
 		font-weight: 300;
+	}
+
+	:global(body) {
+		border-radius: 1.5rem;
 	}
 
 	.home {
