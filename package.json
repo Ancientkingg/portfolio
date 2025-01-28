@@ -52,6 +52,7 @@
     "flowbite": "^3.0.0",
     "flowbite-svelte": "^0.47.4",
     "seedrandom": "^3.0.5",
+    "svelte-cloudinary": "^2.3.0",
     "svelte-media-queries": "^1.6.2",
     "three": "^0.159.0",
     "unplugin-icons": "^0.19.3",

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { CldImage } from 'svelte-cloudinary';
+
 	interface ImageInfo {
 		src: string;
 		width: number;
@@ -11,7 +13,13 @@
 </script>
 
 <div>
-	<img src={imageInfo.src} alt={imageInfo.alt} />
+	<CldImage
+		class="gallery-image"
+		src={imageInfo.src}
+		alt={imageInfo.alt}
+		width="auto"
+		height="auto"
+	/>
 	<p class="bg">25-11-24</p>
 	<p>25-11-24</p>
 </div>
@@ -25,7 +33,7 @@
 		padding: 0;
 	}
 
-	img {
+	:global(.gallery-image) {
 		border-radius: 1rem;
 		width: 100%;
 		height: auto;
@@ -34,7 +42,7 @@
 	.bg {
 		backdrop-filter: brightness(65%) contrast(170%) invert(100%);
 		color: rgba(0, 0, 0, 0);
-        mix-blend-mode: normal;
+		mix-blend-mode: normal;
 	}
 
 	p {
@@ -50,8 +58,8 @@
 		bottom: 0.75rem;
 		left: 1rem;
 		transition: opacity 0.3s;
-        mix-blend-mode: difference;
-        color: white;
+		mix-blend-mode: difference;
+		color: white;
 	}
 
 	div:hover p {

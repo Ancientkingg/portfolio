@@ -4,15 +4,15 @@
 	import type { SvelteComponent } from 'svelte';
 
 	const images = [
-    { src: 'https://picsum.photos/600/400', width: 600, height: 400, alt: "blabla" },
-    { src: 'https://picsum.photos/400/600', width: 400, height: 600 },
-    { src: 'https://picsum.photos/300/200', width: 300, height: 200 },
-    { src: 'https://picsum.photos/800/1200', width: 800, height: 1200 },
-  ];
+		{ src: 'cld-sample-5', width: 667, height: 447, alt: 'blabla' },
+		{ src: 'samples/woman-on-a-football-field', width: 397, height: 446 },
+		{ src: 'samples/upscale-face-1', width: 233, height: 233 },
+		{ src: 'cld-sample-2', width: 667, height: 447 }
+	];
 
-  let rowHeight = 400;
-  // @ts-ignore
-  let imageComponent: typeof SvelteComponent = GalleryImage;
+	let rowHeight = 400;
+	// @ts-ignore
+	let imageComponent: typeof SvelteComponent = GalleryImage;
 </script>
 
 <section class="gallery">
