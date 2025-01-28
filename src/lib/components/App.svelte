@@ -9,16 +9,27 @@
 	import EmailIcon from 'virtual:icons/line-md/email-opened';
 	import SomeoneQuote from './SomeoneQuote.svelte';
 	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 
 	let someone: HTMLElement;
 	let who: HTMLElement;
+	let resizeObserver: ResizeObserver;
 
 	onMount(() => {
-		someone.classList.add('fadeIn');
-		someone.classList.remove('opacity-0');
-		who.classList.add('fadeIn');
-		who.classList.remove('opacity-0');
+		resizeObserver = new ResizeObserver(() => {
+			someone.classList.add('fadeIn');
+			someone.classList.remove('opacity-0');
+			who.classList.add('fadeIn');
+			who.classList.remove('opacity-0');
+		});
+
+		resizeObserver.observe(document.body);
+	});
+
+	onDestroy(() => {
+		if (resizeObserver) {
+			resizeObserver.disconnect();
+		}
 	});
 </script>
 
