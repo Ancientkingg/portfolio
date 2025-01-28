@@ -57,7 +57,7 @@
 	<Card
 		class="justify-center md:aspect-auto overflow-hidden md:row-span-24 md:col-span-12 col-span-12 row-span-12 aspect-[4/3]"
 	>
-		<div class="grid p-0 m-0 h-full w-auto" style="grid-template-columns: 1fr;">
+		<a href="/gallery" class="grid p-0 m-0 h-full w-auto" style="grid-template-columns: 1fr;">
 			<img
 				class="object-cover gallery-photo h-full w-auto"
 				style="grid-row-start: 1; grid-column-start: 1;"
@@ -70,7 +70,7 @@
 			>
 				Gallery
 			</h1>
-		</div>
+		</a>
 	</Card>
 	<Card
 		class="relative justify-end md:col-span-12 md:row-span-12 aspect:auto md:aspect-[4/3] leading-6 col-span-12 row-span-9"

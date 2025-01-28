@@ -9,15 +9,15 @@
 </script>
 
 <nav class="flex justify-between items-center h-24 rounded-3xl mb-5 px-10">
-	<a href="https://github.com/ancientkingg" class="text-2xl">
+	<a href="/" class="text-2xl">
 		<span class="name">SAMUEL</span> <span class="ml-1 surname">BRUIN</span></a
 	>
 	<div class="flex">
 		<div class="p-4 rounded-xl mr-6 nav-button transition-colors">
-			<a href="#" class="text-lg">PROJECTS</a>
+			<a href="/projects" class="text-lg">PROJECTS</a>
 		</div>
 		<div class="p-4 rounded-xl mr-6 nav-button transition-colors">
-			<a href="#" class="text-lg">CV</a>
+			<a href="/cv" class="text-lg">CV</a>
 		</div>
 	</div>
 </nav>
@@ -72,7 +72,7 @@
 	}
 
 	.nav-button:hover {
-		background-color: var(--color-highlight)
+		background-color: var(--color-highlight);
 	}
 
 	.nav-button a {
