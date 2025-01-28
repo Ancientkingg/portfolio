@@ -1,11 +1,13 @@
 <script lang="ts">
 	import '../app.css';
+	import { page } from '$app/stores';
 
 	import { setGenerator, seeded, usingMath } from '$lib/random';
 
 	export let data;
 
 	setGenerator(data.seed.length > 0 ? seeded(data.seed) : usingMath());
+
 </script>
 
 <nav class="flex justify-between items-center h-24 rounded-3xl mb-5 px-10">
@@ -17,7 +19,7 @@
 			<a href="/projects" class="text-lg">PROJECTS</a>
 		</div>
 		<div class="p-4 rounded-xl mr-6 nav-button transition-colors">
-			<a href="/cv" class="text-lg">CV</a>
+			<a href="/contact" class="text-lg">CV</a>
 		</div>
 	</div>
 </nav>

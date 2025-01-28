@@ -8,7 +8,6 @@
 	}
 
 	let imageInfo: ImageInfo = { ...$$restProps } as ImageInfo;
-	console.log(imageInfo);
 </script>
 
 <div>

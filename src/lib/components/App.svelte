@@ -13,14 +13,17 @@
 
 	let someone: HTMLElement;
 	let who: HTMLElement;
+	let gallery: HTMLElement;
+
 	let resizeObserver: ResizeObserver;
 
 	onMount(() => {
+		let fadeInElements = [someone, who, gallery];
 		resizeObserver = new ResizeObserver(() => {
-			someone.classList.add('fadeIn');
-			someone.classList.remove('opacity-0');
-			who.classList.add('fadeIn');
-			who.classList.remove('opacity-0');
+			fadeInElements.forEach((el) => {
+				el.classList.remove('opacity-0');
+				el.classList.add('fadeIn');
+			});
 		});
 
 		resizeObserver.observe(document.body);
@@ -65,8 +68,9 @@
 				src="/images/gallery/kraan.webp"
 			/>
 			<h1
-				class="gallery-text relative p-3 rounded-3xl w-fit h-fit"
+				class="gallery-text relative p-3 rounded-3xl w-fit h-fit text-[3rem] opacity-0 fadeIn"
 				style="grid-row-start: 1; grid-column-start: 1;"
+				bind:this={gallery}
 			>
 				Gallery
 			</h1>
@@ -81,12 +85,14 @@
 		</span>
 	</Card>
 	<Card
-		class="justify-between relative md:col-span-12 md:row-span-12 col-span-12 row-span-9"
+		class="contact-card justify-between relative md:col-span-12 md:row-span-12 col-span-12 row-span-9"
 		style="filter: saturate(1.5);"
 	>
-		<h4 class="w-fit self-start pl-8 pt-8">Questions?</h4>
-		<h1 class="w-fit self-start pl-8 pb-12">Contact me</h1>
-		<LinkIcon class="card-link absolute right-8 top-8 text-2xl" />
+		<a class="flex flex-col items-center relative w-full h-full m-0 p-0 justify-between" href="/contact">
+			<h4 class="w-fit self-start pl-8 pt-8 text-[1.25rem]">Questions?</h4>
+			<h1 class="w-fit self-start pl-8 pb-12 text-[3rem]">Contact me</h1>
+			<LinkIcon class="card-link absolute right-8 top-8 text-2xl" />
+		</a>
 	</Card>
 	<Card
 		class="!flex-row justify-evenly col-span-12 aspect-auto row-span-4 md:col-span-24 xl:col-span-12"
@@ -107,10 +113,16 @@
   <Scene />
 </Canvas> -->
 
-<style>
+<style lang="postcss">
+	:global(.contact-card) {
+		cursor: pointer;
+	}
 	.gallery-photo {
-		transition: transform 0.5s, filter 0.5s;
-		filter: saturate(70%)
+		transition:
+			transform 0.5s,
+			filter 0.5s,
+			opacity 0.5s;
+		filter: saturate(70%);
 	}
 
 	:global(.card):hover .gallery-photo {
@@ -125,7 +137,8 @@
 			backdrop-filter 0.5s,
 			margin 0.5s,
 			right 0.5s cubic-bezier(0.33, 1, 0.68, 1),
-			transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+			transform 0.5s cubic-bezier(0.33, 1, 0.68, 1),
+			opacity 0.5s;
 
 		top: 100%;
 
