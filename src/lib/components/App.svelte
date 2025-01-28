@@ -55,16 +55,29 @@
 		<img class="object-cover h-full w-auto" alt="Author portrait" src="/images/mirror.png" />
 	</Card>
 	<Card
-		class="justify-center md:aspect-auto md:row-span-24 md:col-span-12 col-span-12 row-span-12 aspect-[4/3]"
-		>3 (photo gallery)</Card
+		class="justify-center md:aspect-auto overflow-hidden md:row-span-24 md:col-span-12 col-span-12 row-span-12 aspect-[4/3]"
 	>
+		<div class="grid p-0 m-0 h-full w-auto" style="grid-template-columns: 1fr;">
+			<img
+				class="object-cover gallery-photo h-full w-auto"
+				style="grid-row-start: 1; grid-column-start: 1;"
+				alt="Author portrait"
+				src="/images/gallery/kraan.webp"
+			/>
+			<h1
+				class="gallery-text relative p-3 rounded-3xl w-fit h-fit"
+				style="grid-row-start: 1; grid-column-start: 1;"
+			>
+				Gallery
+			</h1>
+		</div>
+	</Card>
 	<Card
 		class="relative justify-end md:col-span-12 md:row-span-12 aspect:auto md:aspect-[4/3] leading-6 col-span-12 row-span-9"
 	>
 		<img class="flag" alt="Indonesian flag" src="/images/flag_id_nl.png" />
 		<span class="font-[Gilroy] !tracking-normal text-lg p-10 pb-14 pr-32">
-			Hello, I'm Samuel Bruin, a software engineer based in The Netherlands, but originally from
-			Indonesia.
+			Hello, I'm Samuel Bruin, a software engineer based in The Netherlands, born in Indonesia.
 		</span>
 	</Card>
 	<Card
@@ -95,6 +108,41 @@
 </Canvas> -->
 
 <style>
+	.gallery-photo {
+		transition: transform 0.5s, filter 0.5s;
+		filter: saturate(70%)
+	}
+
+	:global(.card):hover .gallery-photo {
+		transform: scale(1.01);
+		filter: none;
+	}
+
+	.gallery-text {
+		backdrop-filter: contrast(80%) brightness(150%) saturate(150%) blur(6px);
+		box-shadow: 0 0 20px 15px rgba(0, 0, 0, 0.2);
+		transition:
+			backdrop-filter 0.5s,
+			margin 0.5s,
+			right 0.5s cubic-bezier(0.33, 1, 0.68, 1),
+			transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+
+		top: 100%;
+
+		right: -100%;
+		margin-left: -32px;
+		margin-top: -42px;
+		transform: translateY(-100%) translateX(-100%);
+	}
+
+	:global(.card):hover .gallery-text {
+		backdrop-filter: contrast(80%) brightness(150%) saturate(200%) blur(16px);
+
+		transform: translateY(-100%);
+		right: 0;
+		margin-left: 32px;
+	}
+
 	.flag {
 		border-radius: 6px;
 		position: absolute;
