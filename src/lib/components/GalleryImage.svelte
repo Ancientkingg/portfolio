@@ -20,8 +20,8 @@
 		width="auto"
 		height="auto"
 	/>
-	<p class="bg">25-11-24</p>
-	<p>25-11-24</p>
+	<p class="bg">{imageInfo.caption}</p>
+	<p>{imageInfo.caption}</p>
 </div>
 
 <style lang="postcss">

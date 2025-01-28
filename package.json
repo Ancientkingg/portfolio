@@ -49,6 +49,7 @@
     "@threlte/rapier": "^2.0.1",
     "@threlte/theatre": "^2.1.8",
     "@types/seedrandom": "^3.0.8",
+    "cloudinary": "^2.5.1",
     "flowbite": "^3.0.0",
     "flowbite-svelte": "^0.47.4",
     "seedrandom": "^3.0.5",
