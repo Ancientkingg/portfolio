@@ -8,6 +8,8 @@ export default {
       gridColumn: {
         'span-15': 'span 15 / span 15',
         'span-16': 'span 16 / span 16',
+        'span-18': 'span 18 / span 18',
+        'span-20': 'span 20 / span 20',
         'span-24': 'span 24 / span 24',
         'span-32': 'span 32 / span 32',
         'span-36': 'span 36 / span 36',
@@ -15,6 +17,8 @@ export default {
       gridRow: {
         'span-15': 'span 15 / span 15',
         'span-16': 'span 16 / span 16',
+        'span-18': 'span 18 / span 18',
+        'span-20': 'span 20 / span 20',
         'span-24': 'span 24 / span 24',
         'span-32': 'span 32 / span 32',
         'span-36': 'span 36 / span 36',
