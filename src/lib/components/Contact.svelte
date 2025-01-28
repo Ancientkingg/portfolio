@@ -13,7 +13,7 @@
 		navigator.clipboard.writeText(email);
 	};
 
-	const createSVG = (width, height, radius) => {
+	const createSVG = (width: number, height: number, radius: number) => {
 		const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
 
 		const rectangle = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -87,6 +87,7 @@
 		<h4 class="w-fit self-start pl-8 pt-2 text-[1.25rem]">
 			I prefer to be contacted through email.
 		</h4>
+		<!-- svelte-ignore a11y-invalid-attribute -->
 		<a id="email" class="w-fit self-start ml-6 text-[1.25rem] email" on:click={copyEmail} href="#"
 			>{email}</a
 		>

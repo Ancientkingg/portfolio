@@ -3,6 +3,3 @@
 </script>
 
 <Contact />
-
-<style>
-</style>

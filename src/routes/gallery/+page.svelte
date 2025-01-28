@@ -3,6 +3,3 @@
 </script>
 
 <Gallery />
-
-<style>
-</style>
