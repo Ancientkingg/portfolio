@@ -96,7 +96,7 @@
 	</Card>
 	<Card
 		class="contact-card justify-between relative md:col-span-12 md:row-span-12 col-span-12 row-span-9"
-		style="filter: saturate(1.5);"
+		style="filter: saturate(2) contrast(1.2);"
 	>
 		<a
 			class="flex flex-col items-center relative w-full h-full m-0 p-0 justify-between"
