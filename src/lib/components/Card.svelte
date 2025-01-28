@@ -22,7 +22,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		background-color: theme('colors.green.300');
+		background-color: var(--color-fg);
 		border-radius: 1.5rem;
 		position: relative;
 		/* grid-column: span 12; */
@@ -37,14 +37,16 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
-        border-radius: 1.5rem;
-        transition: border 0.1s cubic-bezier(0.075, 0.82, 0.165, 1), opacity 0.4s;
-        opacity: 0%;
+		border-radius: 1.5rem;
+		transition:
+			border 0.1s cubic-bezier(0.075, 0.82, 0.165, 1),
+			opacity 0.4s;
+		opacity: 0%;
 		pointer-events: none;
 	}
 
 	.card:hover .inline-border {
-		border: 4px solid theme('colors.green.200');
-        opacity: 70%;
+		border: 4px solid var(--color-highlight);
+		opacity: 70%;
 	}
 </style>

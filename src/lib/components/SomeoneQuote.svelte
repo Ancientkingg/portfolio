@@ -15,7 +15,8 @@
         'learns.',
         'builds.',
         'designs.',
-        'yaps.'
+        'yaps.',
+		'likes bikes.'
 	];
 
 	let quote = quotes[Math.floor(nextRandom() * quotes.length)];

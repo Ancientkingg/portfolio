@@ -8,15 +8,15 @@
 	setGenerator(data.seed.length > 0 ? seeded(data.seed) : usingMath());
 </script>
 
-<nav class="flex justify-between items-center bg-green-300 h-24 rounded-3xl mb-5 px-10">
+<nav class="flex justify-between items-center h-24 rounded-3xl mb-5 px-10">
 	<a href="https://github.com/ancientkingg" class="text-2xl">
 		<span class="name">SAMUEL</span> <span class="ml-1 surname">BRUIN</span></a
 	>
 	<div class="flex">
-		<div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
+		<div class="p-4 rounded-xl mr-6 nav-button transition-colors">
 			<a href="#" class="text-lg">PROJECTS</a>
 		</div>
-		<div class="p-4 rounded-xl mr-6 nav-button hover:bg-green-100 transition-colors">
+		<div class="p-4 rounded-xl mr-6 nav-button transition-colors">
 			<a href="#" class="text-lg">CV</a>
 		</div>
 	</div>
@@ -26,6 +26,10 @@
 
 <style lang="postcss">
 	@import '/static/style/fonts.css';
+
+	nav {
+		background-color: var(--color-nav);
+	}
 
 	.surname {
 		display: inline-block;
@@ -62,9 +66,13 @@
 	}
 
 	nav a {
-		font-family: 'Montserrat';
-		font-weight: 300;
+		font-family: 'Inter';
+		font-weight: 450;
 		color: theme('colors.gray.900');
+	}
+
+	.nav-button:hover {
+		background-color: var(--color-highlight)
 	}
 
 	.nav-button a {
@@ -81,7 +89,7 @@
 		margin-bottom: 2rem;
 		margin-left: 8rem;
 		margin-right: 8rem;
-		background-color: theme('colors.green.100');
+		background-color: var(--color-bg);
 	}
 
 	@media only screen and (max-width: 900px) {
