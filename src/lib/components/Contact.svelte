@@ -116,7 +116,8 @@
 			<EmailIcon class="text-green-950 text-3xl" />
 		</a>
 	</Card>
-	<Card class="col-span-36 row-span-16"></Card>
+	<Card class="col-span-24 row-span-16"></Card>
+	<Card class="col-span-12 row-span-16"></Card>
 </section>
 
 <style lang="postcss">
