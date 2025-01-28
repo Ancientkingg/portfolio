@@ -1,13 +1,6 @@
 <script lang="ts">
+	import type { ImageInfo } from '$lib/images';
 	import { CldImage } from 'svelte-cloudinary';
-
-	interface ImageInfo {
-		src: string;
-		width: number;
-		height: number;
-		alt: string;
-		caption: string;
-	}
 
 	let imageInfo: ImageInfo = { ...$$restProps } as ImageInfo;
 </script>

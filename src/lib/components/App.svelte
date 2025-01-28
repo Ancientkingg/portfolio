@@ -11,6 +11,8 @@
 	import { browser } from '$app/environment';
 	import { onMount, onDestroy } from 'svelte';
 
+	export let featuredImage;
+
 	let someone: HTMLElement;
 	let who: HTMLElement;
 	let gallery: HTMLElement;
@@ -64,8 +66,8 @@
 			<img
 				class="object-cover gallery-photo h-full w-auto"
 				style="grid-row-start: 1; grid-column-start: 1;"
-				alt="Author portrait"
-				src="/images/gallery/kraan.webp"
+				alt="Featured from gallery"
+				src="{featuredImage}"
 			/>
 			<h1
 				class="gallery-text relative p-3 rounded-3xl w-fit h-fit text-[3rem] opacity-0 fadeIn"
