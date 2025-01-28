@@ -8,17 +8,25 @@
 	export let link;
 </script>
 
-<div class="project-container">
-	<img src={imgSrc} class="{imgClass || ''} card" alt={$$restProps.alt || ''} />
-	<div class="text-container">
-		<h1>{title}</h1>
-		<p>{caption}</p>
-	</div>
+{#if link}
+	<a href={link || '#'} target="_blank" class="project-container">
+		<img src={imgSrc} class="{imgClass || ''} card" alt={$$restProps.alt || ''} />
+		<div class="text-container">
+			<h1>{title}</h1>
+			<p>{caption}</p>
+		</div>
 
-	{#if link}
 		<LinkIcon class="card-link absolute right-8 top-8 text-2xl" />
-	{/if}
-</div>
+	</a>
+{:else}
+	<div class="project-container">
+		<img src={imgSrc} class="{imgClass || ''} card" alt={$$restProps.alt || ''} />
+		<div class="text-container">
+			<h1>{title}</h1>
+			<p>{caption}</p>
+		</div>
+	</div>
+{/if}
 
 <style lang="postcss">
 	h1 {
