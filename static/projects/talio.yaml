@@ -1,0 +1,8 @@
+image: talio.png
+img-styling-override: ''
+title: TALIO
+link: https://github.com/Ancientkingg/talio
+caption: >-
+  Talio is a Java-based planning application. 
+  The program is built to let users create, classify and track goals within a simple GUI environment. 
+  This project was made for CSE1105 @ TU Delft.

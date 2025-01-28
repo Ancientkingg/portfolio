@@ -1,0 +1,7 @@
+image: rust-raytracer.png
+img-styling-override: ''
+title: Rust Software Ray Tracer
+link: https://github.com/Ancientkingg/rust-raytracer
+caption: >-
+  A real-time ray tracer written in Rust. 
+  This project was made as practice to learn Rust with the aim to know the language a lot better and become a lot more comfortable with it.

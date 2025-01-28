@@ -1,0 +1,6 @@
+image: portfolio.png
+img-styling-override: ''
+title: Portfolio
+link: https://github.com/Ancientkingg/portfolio
+caption: >-
+  My portfolio written in Svelte.

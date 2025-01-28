@@ -1,0 +1,6 @@
+image: oculite.png
+img-styling-override: ''
+title: Oculite
+link: https://github.com/Ancientkingg/oculite
+caption: >-
+  A user-friendly full-stack dashboard for monitoring prices, written in Vue 3.

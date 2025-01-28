@@ -1,0 +1,6 @@
+image: cuda-raytracer.png
+img-styling-override: ''
+title: CUDA Hardware Ray Tracer
+link: https://github.com/Ancientkingg/cuda-raytracer
+caption: >-
+  A real-time hardware-accelerated ray tracer written in CUDA displayed by OpenGL, using CUDA and OpenGL interop.

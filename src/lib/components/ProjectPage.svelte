@@ -1,23 +1,29 @@
 <script lang="ts">
 	import Card from './Card.svelte';
 	import Project from './Project.svelte';
+	export let projects: Array<{
+		imgSrc: string;
+		imgStyling: string;
+		title: string;
+		caption: string;
+		link?: string;
+	}>;
 </script>
 
 <section class="project-page">
-	<Card class="col-span-18 row-span-16">
-		<Project
-			imgSrc="/projects/images/pwc.png"
-			imgClass="object-cover h-full w-auto !rounded-none"
-			title="Software Engineer Intern"
-			caption="As part of this internship, I, along with a team of 5 students, developed an AI-powered, currently still
-confidential, tool that is now being prepared to go into production for internal use."
-		/>
-	</Card>
-	<Card class="col-span-18 row-span-16"></Card>
-	<Card class="col-span-18 row-span-16"></Card>
-	<Card class="col-span-18 row-span-16"></Card>
-	<Card class="col-span-18 row-span-16"></Card>
-	<Card class="col-span-18 row-span-16"></Card>
+	{#each projects as project}
+		<Card
+			class="col-span-20 md:col-span-24 xl:col-span-18 2xl:col-span-18 row-span-16 xl:row-span-20 2xl:row-span-16"
+		>
+			<Project
+				imgSrc={project.imgSrc}
+				imgClass={project.imgStyling}
+				title={project.title}
+				caption={project.caption}
+                link={project.link}
+			/>
+		</Card>
+	{/each}
 </section>
 
 <style lang="postcss">
