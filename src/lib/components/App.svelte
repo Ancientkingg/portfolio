@@ -13,6 +13,10 @@
 
 	export let featuredImage;
 
+	import { nextRandom } from '$lib/random';
+
+	let authorPortraitIdx = nextRandom() > 0.5 ? 0 : 1;
+
 	let someone: HTMLElement;
 	let who: HTMLElement;
 	let gallery: HTMLElement;
@@ -57,7 +61,11 @@
 	<Card
 		class="justify-center overflow-hidden md:aspect-auto md:col-span-9 md:row-span-16  col-span-12 row-span-12 aspect-[4/3]"
 	>
-		<img class="object-cover h-full w-auto" alt="Author portrait" src="/images/mirror.png" />
+		<img
+			class="object-cover h-full w-auto"
+			alt="Author portrait"
+			src={'images/' + ['mirror.png', 'mirror_selfie.jpg'][authorPortraitIdx]}
+		/>
 	</Card>
 	<Card
 		class="justify-center md:aspect-auto overflow-hidden md:row-span-24 md:col-span-12 col-span-12 row-span-12 aspect-[4/3]"
@@ -67,7 +75,7 @@
 				class="object-cover gallery-photo h-full w-auto"
 				style="grid-row-start: 1; grid-column-start: 1;"
 				alt="Featured from gallery"
-				src="{featuredImage}"
+				src={featuredImage}
 			/>
 			<h1
 				class="gallery-text relative p-3 rounded-3xl w-fit h-fit text-[3rem] opacity-0 fadeIn"
@@ -90,7 +98,10 @@
 		class="contact-card justify-between relative md:col-span-12 md:row-span-12 col-span-12 row-span-9"
 		style="filter: saturate(1.5);"
 	>
-		<a class="flex flex-col items-center relative w-full h-full m-0 p-0 justify-between" href="/contact">
+		<a
+			class="flex flex-col items-center relative w-full h-full m-0 p-0 justify-between"
+			href="/contact"
+		>
 			<h4 class="w-fit self-start pl-8 pt-8 text-[1.25rem]">Questions?</h4>
 			<h1 class="w-fit self-start pl-8 pb-12 text-[3rem]">Contact me</h1>
 			<LinkIcon class="card-link absolute right-8 top-8 text-2xl" />
