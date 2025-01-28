@@ -46,7 +46,7 @@ export const getImagesInfo = (): Promise<ImageInfo[]> => new Promise((resolve, r
         });
         imagesInfoDate = Date.now();
 
-        resolve(imagesInfo);
+        resolve(imagesInfo!);
       });
 });
 
