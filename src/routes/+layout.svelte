@@ -7,7 +7,6 @@
 	export let data;
 
 	setGenerator(data.seed.length > 0 ? seeded(data.seed) : usingMath());
-
 </script>
 
 <nav class="flex justify-between items-center h-24 rounded-3xl mb-5 px-10">
@@ -87,17 +86,18 @@
 	}
 
 	:global(body) {
-		margin-top: 2rem;
-		margin-bottom: 2rem;
-		margin-left: 8rem;
-		margin-right: 8rem;
+		border-radius: 0 !important;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		padding-left: 8rem;
+		padding-right: 8rem;
 		background-color: var(--color-bg);
 	}
 
 	@media only screen and (max-width: 900px) {
 		:global(body) {
-			margin-left: 2rem;
-			margin-right: 2rem;
+			padding-left: 2rem;
+			padding-right: 2rem;
 		}
 	}
 
