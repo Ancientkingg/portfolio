@@ -34,8 +34,6 @@ export const getImagesInfo = (): Promise<ImageInfo[]> => new Promise((resolve, r
             reject(err);
         }
 
-        console.log(result);
-
         imagesInfo = result.resources.map((image: { public_id: string, width: number, height: number, created_at: string, secure_url: string }) => {
             const timestamp = image.created_at.slice(0, 10);
             return {
