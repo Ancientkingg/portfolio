@@ -26,12 +26,15 @@ export const getImagesInfo = (): Promise<ImageInfo[]> => new Promise((resolve, r
 
     cloudinary.api.resources({
         type: 'upload',
-        prefix: 'photos'
+        prefix: 'photos',
+        max_results: 500,
       }, (err, result) => {
         if (err) {
             console.log(err);
             reject(err);
         }
+
+        console.log(result);
 
         imagesInfo = result.resources.map((image: { public_id: string, width: number, height: number, created_at: string, secure_url: string }) => {
             const timestamp = image.created_at.slice(0, 10);
