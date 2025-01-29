@@ -1,38 +1,15 @@
-# create-svelte
+# Portfolio | Samuel Bruin
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+![Portfolio Screenshot](./resources/portfolio.png)
 
-## Creating a project
+Welcome to my personal portfolio repository! This project showcases my skills, projects, and professional journey in web development and design.
 
-If you're seeing this, you've probably already done this step. Congrats!
+[![Live Demo](https://samuelbruin.com)](https://samuelbruin.com) <!-- Update with your live URL -->
+![License](https://img.shields.io/badge/License-MIT-blue)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## 🛠 Technologies Used
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- HTML5 & CSS3 (Flexbox/Grid)
+- [Sveltekit](https://kit.svelte.dev/) for the frontend
+- [Sass](https://sass-lang.com/) for styling
+- [Three.js](https://threejs.org/) for 3D elements
