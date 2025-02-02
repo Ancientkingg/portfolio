@@ -91,7 +91,7 @@
 	>
 		<img class="flag" alt="Indonesian flag" src="/images/flag_id_nl.png" />
 		<span class="font-[Gilroy] !tracking-normal text-lg p-10 pb-14 pr-32">
-			Hello, I'm Samuel Bruin, a software engineer based in The Netherlands, born in Indonesia.
+			Hi, I'm Samuel, a Comp Sci student studying at TU Delft.
 		</span>
 	</Card>
 	<Card
