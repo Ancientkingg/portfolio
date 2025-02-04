@@ -1,11 +1,13 @@
-import { getImagesInfo, selectFeaturedImage } from '$lib/images';
+import { getImagesInfo, selectRandomImage, getAuthorImages } from '$lib/images';
 import type { PageServerLoad } from './$types';
 
 
 export const load: PageServerLoad = async () => {
 
-    const featured = selectFeaturedImage(await getImagesInfo());
-	const featuredImage = featured.secure_url;
+    const [featuredImages, authorImages] = await Promise.all([getImagesInfo(), getAuthorImages()]);
 
-    return { featuredImage };
+    const featuredImage = selectRandomImage(featuredImages);
+    const authorImage = selectRandomImage(authorImages);
+
+    return { featuredImage, authorImage };
 };

@@ -2,17 +2,14 @@
 	import type { ImageInfo } from '$lib/images';
 	import { CldImage } from 'svelte-cloudinary';
 
-	let imageInfo: ImageInfo = { ...$$restProps } as ImageInfo;
+	const imageInfo = { ...$$restProps } as ImageInfo & { scaledHeight: number; scaledWidth: number };
+
+	const width = Math.ceil(imageInfo.scaledWidth);
+	const height = Math.ceil(imageInfo.scaledHeight);
 </script>
 
 <div>
-	<CldImage
-		class="gallery-image"
-		src={imageInfo.src}
-		alt={imageInfo.alt}
-		width="auto"
-		height="auto"
-	/>
+	<CldImage class="gallery-image" src={imageInfo.src} alt={imageInfo.alt} {width} {height} />
 	<p class="bg">{imageInfo.caption}</p>
 	<p>{imageInfo.caption}</p>
 </div>

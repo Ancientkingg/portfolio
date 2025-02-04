@@ -3,8 +3,7 @@
 	let { data } = $$props;
 
 	const featuredImage = data.featuredImage;
-
-	
+	const authorImage = data.authorImage;
 </script>
 
-<App {featuredImage} />
+<App {featuredImage} {authorImage} />

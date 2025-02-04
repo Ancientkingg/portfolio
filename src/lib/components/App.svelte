@@ -10,12 +10,12 @@
 	import SomeoneQuote from './SomeoneQuote.svelte';
 	import { browser } from '$app/environment';
 	import { onMount, onDestroy } from 'svelte';
+	import { CldImage } from 'svelte-cloudinary';
 
-	export let featuredImage;
+	export let authorImage: ImageInfo;
+	export let featuredImage: ImageInfo;
 
-	import { nextRandom } from '$lib/random';
-
-	let authorPortraitIdx = nextRandom() > 0.5 ? 0 : 1;
+	import type { ImageInfo } from '$lib/images';
 
 	let someone: HTMLElement;
 	let who: HTMLElement;
@@ -61,21 +61,24 @@
 	<Card
 		class="justify-center overflow-hidden md:aspect-auto md:col-span-9 md:row-span-16  col-span-12 row-span-12 aspect-[4/3]"
 	>
-		<img
+		<CldImage
 			class="object-cover h-full w-auto"
+			src={authorImage.src}
 			alt="Author portrait"
-			src={'images/' + ['mirror.png', 'mirror_selfie.jpg'][authorPortraitIdx]}
+			width="{authorImage.width}"
+			height="{authorImage.height}"
 		/>
 	</Card>
 	<Card
 		class="justify-center md:aspect-auto overflow-hidden md:row-span-24 md:col-span-12 col-span-12 row-span-12 aspect-[4/3]"
 	>
 		<a href="/gallery" class="grid p-0 m-0 h-full w-auto" style="grid-template-columns: 1fr;">
-			<img
-				class="object-cover gallery-photo h-full w-auto"
-				style="grid-row-start: 1; grid-column-start: 1;"
+			<CldImage
+				class="featured-image object-cover gallery-photo h-full w-auto"
+				src={featuredImage.src}
 				alt="Featured from gallery"
-				src={featuredImage}
+				width="{featuredImage.width}"
+				height="{featuredImage.height}"
 			/>
 			<h1
 				class="gallery-text relative p-3 rounded-3xl w-fit h-fit text-[3rem] opacity-0 fadeIn"
@@ -127,10 +130,14 @@
 </Canvas> -->
 
 <style lang="postcss">
+	:global(.featured-image) {
+		grid-row-start: 1;
+		grid-column-start: 1;
+	}
 	:global(.contact-card) {
 		cursor: pointer;
 	}
-	.gallery-photo {
+	:global(.gallery-photo) {
 		transition:
 			transform 0.5s,
 			filter 0.5s,
@@ -138,7 +145,7 @@
 		filter: saturate(70%);
 	}
 
-	:global(.card):hover .gallery-photo {
+	:global(.card):hover :global(.gallery-photo) {
 		transform: scale(1.01);
 		filter: none;
 	}
