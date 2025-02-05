@@ -31,6 +31,13 @@
 		height: auto;
 	}
 
+	:global(img) {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		text-align: center;
+	}
+
 	.bg {
 		backdrop-filter: brightness(65%) contrast(170%) invert(100%);
 		color: rgba(0, 0, 0, 0);
