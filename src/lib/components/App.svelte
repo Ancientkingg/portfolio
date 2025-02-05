@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Canvas } from '@threlte/core';
-	import Scene from './Scene.svelte';
+	// import { Canvas } from '@threlte/core';
+	// import Scene from './Scene.svelte';
 	import Card from './Card.svelte';
 	import CrownIcon from './CrownIcon.svelte';
 	import LinkIcon from 'virtual:icons/line-md/external-link';
@@ -65,8 +65,8 @@
 			class="object-cover h-full w-auto"
 			src={authorImage.src}
 			alt="Author portrait"
-			width="{authorImage.width}"
-			height="{authorImage.height}"
+			width={authorImage.width}
+			height={authorImage.height}
 		/>
 	</Card>
 	<Card
@@ -77,8 +77,8 @@
 				class="featured-image object-cover gallery-photo h-full w-auto"
 				src={featuredImage.src}
 				alt="Featured from gallery"
-				width="{featuredImage.width}"
-				height="{featuredImage.height}"
+				width={featuredImage.width}
+				height={featuredImage.height}
 			/>
 			<h1
 				class="gallery-text relative p-3 rounded-3xl w-fit h-fit text-[3rem] opacity-0 fadeIn"
