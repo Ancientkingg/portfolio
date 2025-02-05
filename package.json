@@ -51,6 +51,7 @@
     "@threlte/theatre": "^2.1.8",
     "@types/seedrandom": "^3.0.8",
     "cloudinary": "^2.5.1",
+    "css-tree": "^3.1.0",
     "dotenv": "^16.4.7",
     "flowbite": "^3.0.0",
     "flowbite-svelte": "^0.47.4",
