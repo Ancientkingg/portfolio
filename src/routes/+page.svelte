@@ -6,4 +6,8 @@
 	const authorImage = data.authorImage;
 </script>
 
+<svelte:head>
+    <title>Samuel Bruin - Portfolio</title>
+</svelte:head>
+
 <App {featuredImage} {authorImage} />

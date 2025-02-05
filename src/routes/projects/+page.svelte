@@ -5,4 +5,8 @@
 	let projects = data.projects;
 </script>
 
+<svelte:head>
+    <title>Samuel Bruin - Projects</title>
+</svelte:head>
+
 <ProjectPage {projects} />
