@@ -9,15 +9,15 @@
 	setGenerator(data.seed.length > 0 ? seeded(data.seed) : usingMath());
 </script>
 
-<nav class="flex justify-between items-center h-24 rounded-3xl mb-5 px-10">
-	<a href="/" class="text-2xl">
+<nav class="flex justify-between items-center h-24 rounded-3xl mb-5 px-10 max-sm:px-5">
+	<a href="/" class="text-2xl max-sm:mr-1.5">
 		<span class="name">SAMUEL</span> <span class="ml-1 surname">BRUIN</span></a
 	>
 	<div class="flex">
-		<div class="p-4 rounded-xl mr-6 nav-button transition-colors">
+		<div class="p-4 max-sm:px-3 rounded-xl mr-6 max-sm:mr-1.5 nav-button transition-colors">
 			<a href="/projects" class="text-lg">PROJECTS</a>
 		</div>
-		<div class="p-4 rounded-xl mr-6 nav-button transition-colors">
+		<div class="p-4 max-sm:px-3 rounded-xl mr-6 max-sm:mr-1.5 nav-button transition-colors">
 			<a href="/contact" class="text-lg">CV</a>
 		</div>
 	</div>

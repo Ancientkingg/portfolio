@@ -13,7 +13,7 @@
 <section class="project-page">
 	{#each projects as project}
 		<Card
-			class="col-span-20 md:col-span-24 xl:col-span-18 2xl:col-span-18 row-span-16 xl:row-span-20 2xl:row-span-16"
+			class="max-sm:col-span-16 col-span-20 md:col-span-24 xl:col-span-18 2xl:col-span-18 row-span-16 xl:row-span-20 2xl:row-span-16"
 		>
 			<Project
 				imgSrc={project.imgSrc}

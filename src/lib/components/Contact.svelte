@@ -1,4 +1,5 @@
 <script lang="ts">
+	import MediaQuery from 'svelte-media-queries';
 	import Card from './Card.svelte';
 	import LinkedInIcon from 'virtual:icons/line-md/linkedin';
 	import GithubIcon from 'virtual:icons/line-md/github';
@@ -77,26 +78,30 @@
 </script>
 
 <section class="contact">
-	<Card
-		class="!flex-col justify-evenly row-span-12 aspect-auto col-span-3 md:row-span-16 xl:row-span-16"
-	></Card>
+	<MediaQuery query="only screen and (min-width: 640px)" let:matches>
+		{#if matches}
+			<Card
+				class="!flex-col justify-evenly row-span-12 aspect-auto col-span-4 md:col-span-9 xl:col-span-3 md:row-span-16 xl:row-span-16"
+			></Card>
+		{/if}
+	</MediaQuery>
 	<Card
 		class="!font-[Gilroy] !tracking-normal text-lg justify-center relative md:aspect-auto md:col-span-15 md:row-span-16 col-span-12 row-span-12 aspect-[4/3]"
 	>
-		<h1 class="w-fit self-start pl-8 pb-20 text-[3rem]">Contact</h1>
-		<h4 class="w-fit self-start pl-8 pt-2 text-[1.25rem]">
+		<h1 class="w-fit self-start pl-8 pb-20 max-sm:pb-8 text-[3rem] max-sm:text-[2.5rem]">Contact</h1>
+		<h4 class="w-fit self-start pl-8 pt-2 text-[1.25rem] max-sm:text-[1.1rem] max-sm:pr-8">
 			I prefer to be contacted through email.
 		</h4>
 		<!-- svelte-ignore a11y-invalid-attribute -->
-		<a id="email" class="w-fit self-start ml-6 text-[1.25rem] email" on:click={copyEmail} href="#"
+		<a id="email" class="w-fit self-start ml-6 text-[1.25rem] max-sm:text-[1.1rem] email" on:click={copyEmail} href="#"
 			>{email}</a
 		>
 		<Tooltip trigger="click" triggeredBy="#email" placement="bottom">Copied email</Tooltip>
 	</Card>
 	<Card
-		class="!font-[Gilroy] !tracking-normal text-lg justify-center relative md:aspect-auto md:col-span-15 md:row-span-16 col-span-12 row-span-12 aspect-[4/3]"
+		class="!font-[Gilroy] !tracking-normal text-lg justify-center relative md:aspect-auto md:col-span-21 xl:col-span-15 md:row-span-16 col-span-12 row-span-12 aspect-[4/3]"
 	>
-		<h1 class="w-fit self-start pl-8 pb-20 text-[3rem]">Curriculum Vitae</h1>
+		<h1 class="w-fit self-start px-8 pb-20 max-sm:pb-8 text-[3rem] max-sm:text-[2.5rem]">Curriculum Vitae</h1>
 		<a
 			href="/docs/CV_Resume_Bruin_Samuel.pdf"
 			download="CV_Bruin_Samuel.pdf"
@@ -104,21 +109,43 @@
 			class="download-button">Download</a
 		>
 	</Card>
-	<Card
-		class="!flex-col justify-evenly row-span-12 aspect-auto col-span-3 md:row-span-16 xl:row-span-16"
-	>
-		<a class="social-link" href="https://www.linkedin.com/in/samuelbruin" target="_blank">
-			<LinkedInIcon class="text-green-950 text-3xl" />
-		</a>
-		<a class="social-link" href="https://github.com/ancientkingg" target="_blank">
-			<GithubIcon class="text-green-950 text-3xl" />
-		</a>
-		<a class="social-link" href="mailto: samuelmbruin@yahoo.com">
-			<EmailIcon class="text-green-950 text-3xl" />
-		</a>
-	</Card>
-	<Card class="col-span-24 row-span-16"></Card>
-	<Card class="col-span-12 row-span-16"></Card>
+	<MediaQuery query="only screen and (max-width: 640px)" let:matches>
+		{#if matches}
+			<Card
+				class="!flex-row justify-evenly col-span-12 aspect-auto row-span-4 md:col-span-24 xl:col-span-12"
+			>
+				<a class="social-link" href="https://www.linkedin.com/in/samuelbruin" target="_blank">
+					<LinkedInIcon class="text-green-950 text-3xl" />
+				</a>
+				<a class="social-link" href="https://github.com/ancientkingg" target="_blank">
+					<GithubIcon class="text-green-950 text-3xl" />
+				</a>
+				<a class="social-link" href="mailto: samuelmbruin@yahoo.com">
+					<EmailIcon class="text-green-950 text-3xl" />
+				</a>
+			</Card>
+		{:else}
+			<Card
+				class="!flex-col justify-evenly row-span-12 aspect-auto col-span-4 md:col-span-3 md:row-span-16 xl:row-span-16"
+			>
+				<a class="social-link" href="https://www.linkedin.com/in/samuelbruin" target="_blank">
+					<LinkedInIcon class="text-green-950 text-3xl" />
+				</a>
+				<a class="social-link" href="https://github.com/ancientkingg" target="_blank">
+					<GithubIcon class="text-green-950 text-3xl" />
+				</a>
+				<a class="social-link" href="mailto: samuelmbruin@yahoo.com">
+					<EmailIcon class="text-green-950 text-3xl" />
+				</a>
+			</Card>
+		{/if}
+	</MediaQuery>
+	<MediaQuery query="only screen and (min-width: 1280px)" let:matches>
+		{#if matches}
+			<Card class="col-span-12 xl:col-span-24 row-span-16"></Card>
+			<Card class="col-span-6 xl:col-span-12 row-span-16"></Card>
+		{/if}
+	</MediaQuery>
 </section>
 
 <style lang="postcss">
@@ -225,13 +252,11 @@
 	}
 
 	h1 {
-		font-size: 3rem;
 		line-height: 1;
 		font-weight: 500;
 	}
 
 	h4 {
-		font-size: 1.25rem;
 		line-height: 1.75rem;
 		font-weight: 300;
 	}
@@ -277,6 +302,12 @@
 	@media only screen and (max-width: 768px) {
 		.contact {
 			grid-template-columns: repeat(16, minmax(0, 1fr));
+		}
+	}
+
+	@media only screen and (max-width: 640px) {
+		.contact {
+			grid-template-columns: repeat(12, minmax(0, 1fr));
 		}
 	}
 </style>

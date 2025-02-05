@@ -9,7 +9,11 @@
 </script>
 
 {#if link}
-	<a href={link || '#'} target="_blank" class="project-container">
+	<a
+		href={link || '#'}
+		target="_blank"
+		class="project-container max-sm:flex-col max-sm:pl-0 max-sm:pt-16 pl-[7.5%]"
+	>
 		<img src={imgSrc} class="{imgClass || ''} card" alt={$$restProps.alt || ''} />
 		<div class="text-container">
 			<h1>{title}</h1>
@@ -19,7 +23,7 @@
 		<LinkIcon class="card-link absolute right-8 top-8 text-2xl" />
 	</a>
 {:else}
-	<div class="project-container">
+	<div class="project-container max-sm:flex-col max-sm:pl-0 max-sm:pt-8 pl-[7.5%]">
 		<img src={imgSrc} class="{imgClass || ''} card" alt={$$restProps.alt || ''} />
 		<div class="text-container">
 			<h1>{title}</h1>
@@ -56,12 +60,22 @@
 		width: 100%;
 		height: 100%;
 		display: flex;
-		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
-		padding-left: 7.5%;
 	}
+
+	@media (width < 640px) {
+		h1 {
+			padding-top: 0.5rem;
+		}
+		.text-container {
+			text-align: left;
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+		}
+	}
+
 	img {
 		border-radius: 0.5rem;
 		width: 12.5rem;

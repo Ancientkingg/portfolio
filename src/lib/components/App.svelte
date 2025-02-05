@@ -56,10 +56,11 @@
 				<SomeoneQuote />
 			{/if}
 		</div>
-		<CrownIcon class="absolute right-12 top-12 text-7xl" />
+		<CrownIcon class="absolute right-12 top-12 max-sm:right-8 max-sm:top-7 text-7xl max-sm:text-5xl" />
 	</Card>
+	<!-- remove aspect-[4/3] from author image -->
 	<Card
-		class="justify-center overflow-hidden md:aspect-auto md:col-span-9 md:row-span-16  col-span-12 row-span-12 aspect-[4/3]"
+		class="justify-center overflow-hidden md:aspect-auto md:col-span-9 md:row-span-16 col-span-12 row-span-12"
 	>
 		<CldImage
 			class="object-cover h-full w-auto"
@@ -69,8 +70,9 @@
 			height={authorImage.height}
 		/>
 	</Card>
+	<!-- remove aspect-[4/3] from gallery image -->
 	<Card
-		class="justify-center md:aspect-auto overflow-hidden md:row-span-24 md:col-span-12 col-span-12 row-span-12 aspect-[4/3]"
+		class="justify-center md:aspect-auto overflow-hidden md:row-span-24 md:col-span-12 col-span-12 row-span-12"
 	>
 		<a href="/gallery" class="grid p-0 m-0 h-full w-auto" style="grid-template-columns: 1fr;">
 			<CldImage
@@ -106,7 +108,7 @@
 			href="/contact"
 		>
 			<h4 class="w-fit self-start pl-8 pt-8 text-[1.25rem]">Questions?</h4>
-			<h1 class="w-fit self-start pl-8 pb-12 text-[3rem]">Contact me</h1>
+			<h1 class="w-fit self-start pl-8 pb-12 text-[3rem] max-sm:text-[2.5rem]">Contact me</h1>
 			<LinkIcon class="card-link absolute right-8 top-8 text-2xl" />
 		</a>
 	</Card>
