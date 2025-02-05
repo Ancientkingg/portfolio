@@ -121,7 +121,7 @@
 		<a class="social-link" href="https://github.com/ancientkingg" target="_blank">
 			<GithubIcon class="text-green-950 text-3xl" />
 		</a>
-		<a class="social-link" href="mailto: samuelmbruin@yahoo.com">
+		<a class="social-link" href="mailto: contact@samuelbruin.com">
 			<EmailIcon class="text-green-950 text-3xl" />
 		</a>
 	</Card>
