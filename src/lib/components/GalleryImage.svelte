@@ -26,6 +26,8 @@
 	:global(.gallery-image) {
 		border-radius: 1rem;
 		width: 100%;
+		max-width: 100% !important;
+		max-height: 100% !important;
 		height: auto;
 	}
 
