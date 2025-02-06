@@ -1,6 +1,4 @@
 <script lang="ts">
-	// import { Canvas } from '@threlte/core';
-	// import Scene from './Scene.svelte';
 	import Card from './Card.svelte';
 	import CrownIcon from './CrownIcon.svelte';
 	import LinkIcon from 'virtual:icons/line-md/external-link';
