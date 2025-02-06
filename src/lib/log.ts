@@ -51,5 +51,13 @@ export default function log(statusCode: number, event) {
         errorStack: errorStack,
         responseTimeMs: Date.now() - event?.locals?.startTimer,
     }
+
+    /* === Exceptions to prevent log spam === */
+
+    // Health check
+    if (logData.ip === '127.0.0.1' && logData.url.endsWith('healthz')) return;
+
+    /* End of exceptions */
+
     console.log(JSON.stringify(logData));
 }
