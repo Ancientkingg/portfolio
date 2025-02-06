@@ -37,11 +37,13 @@ export default function log(statusCode: number, event) {
 
     const referer = getReferer(event.request.headers.get('referer'));
 
+    const url = new URL(event.request.url);
+
     const logData = {
         level: level,
         status: statusCode,
         method: event.request.method,
-        url: event.request.url,
+        path: url.pathname,
         ip: getClientTrueIp(event.request) || event.getClientAddress(),
         referer: referer,
         urlParams: urlParams,
@@ -55,7 +57,7 @@ export default function log(statusCode: number, event) {
     /* === Exceptions to prevent log spam === */
 
     // Health check
-    if (logData.ip === '127.0.0.1' && logData.url.endsWith('healthz')) return;
+    if (logData.ip === '127.0.0.1' && logData.path.endsWith('healthz')) return;
 
     /* End of exceptions */
 
