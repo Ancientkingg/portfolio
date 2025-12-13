@@ -96,7 +96,7 @@
 	>
 		<img class="flag" alt="Indonesian flag" src="/images/flag_id_nl.png" />
 		<span class="font-[Gilroy] !tracking-normal text-lg p-10 pb-14 pr-32">
-			Hi, I'm Samuel, a MSc CESE student studying at TU Delft.
+			Hi, I'm Samuel, an MSc CESE student studying at TU Delft.
 		</span>
 	</Card>
 	<Card
