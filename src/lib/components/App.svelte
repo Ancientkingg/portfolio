@@ -11,6 +11,7 @@
 	import { browser } from '$app/environment';
 	import { onMount, onDestroy } from 'svelte';
 	import { CldImage } from 'svelte-cloudinary';
+	import { measure } from '$lib/actions/measure';
 
 	export let authorImage: ImageInfo;
 	export let featuredImage: ImageInfo;
@@ -22,6 +23,9 @@
 	let gallery: HTMLElement;
 
 	let resizeObserver: ResizeObserver;
+
+	let gallery_preview_height = 0;
+	let author_preview_height = 0;
 
 	onMount(() => {
 		let fadeInElements = [someone, who, gallery];
@@ -56,32 +60,51 @@
 				<SomeoneQuote />
 			{/if}
 		</div>
-		<CrownIcon class="absolute right-12 top-12 max-sm:right-8 max-sm:top-7 text-7xl max-sm:text-5xl" />
+		<CrownIcon
+			class="absolute right-12 top-12 max-sm:right-8 max-sm:top-7 text-7xl max-sm:text-5xl"
+		/>
 	</Card>
 	<!-- remove aspect-[4/3] from author image -->
 	<Card
 		class="justify-center overflow-hidden md:aspect-auto md:col-span-9 md:row-span-16 col-span-12 row-span-12"
 	>
-		<CldImage
-			class="object-cover h-full w-auto"
-			src={authorImage.src}
-			alt="Author portrait"
-			width={authorImage.width}
-			height={authorImage.height}
-		/>
+		<div
+			use:measure={(r) => (author_preview_height = Math.round(r.height * devicePixelRatio))}
+			class="h-full rounded-2xl overflow-hidden"
+		>
+			{#if author_preview_height}
+				<CldImage
+					src={authorImage.src}
+					alt="Author portrait"
+					height={author_preview_height}
+					aspectRatio={authorImage.width / authorImage.height}
+					quality={50}
+					class="object-cover h-full w-auto"
+				/>
+			{/if}
+		</div>
 	</Card>
 	<!-- remove aspect-[4/3] from gallery image -->
 	<Card
 		class="justify-center md:aspect-auto overflow-hidden md:row-span-24 md:col-span-12 col-span-12 row-span-12"
 	>
 		<a href="/gallery" class="grid p-0 m-0 h-full w-auto" style="grid-template-columns: 1fr;">
-			<CldImage
-				class="featured-image object-cover gallery-photo h-full w-auto"
-				src={featuredImage.src}
-				alt="Featured from gallery"
-				width={featuredImage.width}
-				height={featuredImage.height}
-			/>
+			<div
+				use:measure={(r) => (gallery_preview_height = Math.round(r.height * devicePixelRatio))}
+				class="h-full w-auto rounded-2xl overflow-hidden"
+				style="grid-row-start: 1; grid-column-start: 1;"
+			>
+				{#if gallery_preview_height}
+					<CldImage
+						class="featured-image object-cover gallery-photo h-full w-auto"
+						src={featuredImage.src}
+						alt="Featured from gallery"
+						aspectRatio={featuredImage.width / featuredImage.height}
+						height={gallery_preview_height}
+						quality={40}
+					/>
+				{/if}
+			</div>
 			<h1
 				class="gallery-text relative p-3 rounded-3xl w-fit h-fit text-[3rem] opacity-0 fadeIn"
 				style="grid-row-start: 1; grid-column-start: 1;"
