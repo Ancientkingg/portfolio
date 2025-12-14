@@ -26,6 +26,9 @@
 	let gallery_preview_height = 0;
 	let author_preview_height = 0;
 
+	let progress = 0;
+	const loadDuration = 2000; // in milliseconds
+
 	onMount(() => {
 		let fadeInElements = [someone, who, gallery];
 		resizeObserver = new ResizeObserver(() => {
@@ -36,6 +39,16 @@
 		});
 
 		resizeObserver.observe(document.body);
+
+		const start = Date.now();
+		const interval = setInterval(() => {
+			const elapsed = Date.now() - start;
+			progress = Math.min((elapsed / loadDuration) * 100, 100);
+
+			if (progress >= 100) {
+				clearInterval(interval);
+			}
+		}, 16); // ~60fps
 	});
 
 	onDestroy(() => {
@@ -52,6 +65,7 @@
 </script>
 
 <section class="home">
+	<div class="loading-bar" style="width: {progress}%"></div>
 	<!-- remove aspect-[4/3] from card-->
 	<Card
 		class="justify-center relative md:aspect-auto md:col-span-15 md:row-span-16 col-span-12 row-span-12"
@@ -75,14 +89,14 @@
 			use:measure={(r) => (author_preview_height = Math.round(r.height * devicePixelRatio))}
 			class="h-full rounded-2xl overflow-hidden"
 		>
-		<!-- Enforce a 3/4 aspect ratio for the author image -->
+			<!-- Enforce a 3/4 aspect ratio for the author image -->
 			{#if author_preview_height}
 				<CldImage
 					on:load={imageFadeIn}
 					src={authorImage.src}
 					alt=""
 					height={author_preview_height}
-					width={Math.round((3/4) * author_preview_height)}
+					width={Math.round((3 / 4) * author_preview_height)}
 					quality={50}
 					class="object-cover h-full w-auto"
 				/>
@@ -163,6 +177,16 @@
 </Canvas> -->
 
 <style lang="postcss">
+	.loading-bar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 4px;
+		background: linear-gradient(90deg, #22c55e, #06b6d4);
+		width: 0%;
+		transition: width 0.1s linear;
+		z-index: 50;
+	}
 	:global(.featured-image) {
 		grid-row-start: 1;
 		grid-column-start: 1;
