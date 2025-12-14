@@ -44,6 +44,12 @@
 			resizeObserver.disconnect();
 		}
 	});
+
+	const imageFadeIn = (event: Event) => {
+		const img = event.target as HTMLImageElement;
+		img.classList.remove('opacity-0');
+		img.classList.add('fadeIn');
+	};
 </script>
 
 <section class="home">
@@ -74,15 +80,11 @@
 		>
 			{#if author_preview_height}
 				<CldImage
-					on:load={(e) => {
-						const el = event.target;
-						el.classList.remove('opacity-0');
-						el.classList.add('fadeIn');
-					}}
+					on:load={imageFadeIn}
 					src={authorImage.src}
 					alt=""
 					height={author_preview_height}
-					aspectRatio={authorImage.width / authorImage.height}
+					width={Math.round((authorImage.width / authorImage.height) * author_preview_height)}
 					quality={50}
 					class="object-cover h-full w-auto"
 				/>
@@ -101,15 +103,13 @@
 			>
 				{#if gallery_preview_height}
 					<CldImage
-						on:load={(e) => {
-							const el = event.target;
-							el.classList.remove('opacity-0');
-							el.classList.add('fadeIn');
-						}}
+						on:load={imageFadeIn}
 						class="featured-image object-cover gallery-photo h-full w-auto opacity-0 fadeIn"
 						src={featuredImage.src}
 						alt=""
-						aspectRatio={featuredImage.width / featuredImage.height}
+						width={Math.round(
+							(featuredImage.width / featuredImage.height) * gallery_preview_height
+						)}
 						height={gallery_preview_height}
 						quality={40}
 					/>
