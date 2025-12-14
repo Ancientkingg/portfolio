@@ -1,6 +1,4 @@
 <script lang="ts">
-	// import { Canvas } from '@threlte/core';
-	// import Scene from './Scene.svelte';
 	import Card from './Card.svelte';
 	import CrownIcon from './CrownIcon.svelte';
 	import LinkIcon from 'virtual:icons/line-md/external-link';
@@ -8,7 +6,6 @@
 	import GithubIcon from 'virtual:icons/line-md/github';
 	import EmailIcon from 'virtual:icons/line-md/email-opened';
 	import SomeoneQuote from './SomeoneQuote.svelte';
-	import { browser } from '$app/environment';
 	import { onMount, onDestroy } from 'svelte';
 	import { CldImage } from 'svelte-cloudinary';
 	import { measure } from '$lib/actions/measure';
