@@ -80,7 +80,7 @@
 						el.classList.add('fadeIn');
 					}}
 					src={authorImage.src}
-					alt="Author portrait"
+					alt=""
 					height={author_preview_height}
 					aspectRatio={authorImage.width / authorImage.height}
 					quality={50}
@@ -108,7 +108,7 @@
 						}}
 						class="featured-image object-cover gallery-photo h-full w-auto opacity-0 fadeIn"
 						src={featuredImage.src}
-						alt="Featured from gallery"
+						alt=""
 						aspectRatio={featuredImage.width / featuredImage.height}
 						height={gallery_preview_height}
 						quality={40}
