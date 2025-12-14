@@ -16,8 +16,6 @@ export const load: PageServerLoad = async () => {
 		Math.random() * (emojiOrNot ? emojisCount : crownsCount)
 	);
 
-    console.log('Crown selected:', { emojiOrNot, crownIndex });
-
     return {
 		featuredImage: selectRandomImage(featuredImages),
 		authorImage: selectRandomImage(authorImages),
