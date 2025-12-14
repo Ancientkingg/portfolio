@@ -75,13 +75,14 @@
 			use:measure={(r) => (author_preview_height = Math.round(r.height * devicePixelRatio))}
 			class="h-full rounded-2xl overflow-hidden"
 		>
+		<!-- Enforce a 3/4 aspect ratio for the author image -->
 			{#if author_preview_height}
 				<CldImage
 					on:load={imageFadeIn}
 					src={authorImage.src}
 					alt=""
 					height={author_preview_height}
-					width={Math.round((authorImage.width / authorImage.height) * author_preview_height)}
+					width={Math.round((3/4) * author_preview_height)}
 					quality={50}
 					class="object-cover h-full w-auto"
 				/>
