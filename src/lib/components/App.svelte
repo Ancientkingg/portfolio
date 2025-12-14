@@ -15,6 +15,8 @@
 
 	export let authorImage: ImageInfo;
 	export let featuredImage: ImageInfo;
+	export let crown: { emojiOrNot: boolean; index: number };
+	export let quoteIdx: number;
 
 	import type { ImageInfo } from '$lib/images';
 
@@ -53,20 +55,18 @@
 </script>
 
 <section class="home">
+	<!-- remove aspect-[4/3] from card-->
 	<Card
-		class="justify-center relative md:aspect-auto md:col-span-15 md:row-span-16 col-span-12 row-span-12 aspect-[4/3]"
+		class="justify-center relative md:aspect-auto md:col-span-15 md:row-span-16 col-span-12 row-span-12"
 	>
-		<div class="flex flex-wrap w-fit pl-[9%] pb-12 self-start pr-8 font-[Montserrat] mt-[30%]">
+		<div class="flex flex-wrap w-fit pl-[9%] pb-9 self-start pr-8 font-[Montserrat] mt-[30%]">
 			<h1 class="text-5xl !font-medium underline pt-1 opacity-0" bind:this={someone}>Someone</h1>
 			<h1 class="text-5xl !font-medium pt-1 opacity-0">&nbsp;</h1>
 			<h1 class="text-5xl !font-thin italic pt-1 opacity-0" bind:this={who}>who&nbsp;&nbsp;</h1>
-			{#if !browser}
-				<h1 class="text-5xl !font-bold italic pt-1 opacity-0">likes to code.</h1>
-			{:else}
-				<SomeoneQuote />
-			{/if}
+			<SomeoneQuote {quoteIdx} />
 		</div>
 		<CrownIcon
+			{crown}
 			class="absolute right-12 top-12 max-sm:right-8 max-sm:top-7 text-7xl max-sm:text-5xl"
 		/>
 	</Card>
@@ -95,7 +95,7 @@
 	<Card
 		class="justify-center md:aspect-auto overflow-hidden md:row-span-24 md:col-span-12 col-span-12 row-span-12"
 	>
-		<a href="/gallery" class="grid p-0 m-0 h-full w-auto" style="grid-template-columns: 1fr;">
+		<a href="/gallery" class="grid p-0 m-0 h-full w-full" style="grid-template-columns: 1fr;">
 			<div
 				use:measure={(r) => (gallery_preview_height = Math.round(r.height * devicePixelRatio))}
 				class="h-full w-auto rounded-2xl overflow-hidden"
@@ -116,7 +116,7 @@
 				{/if}
 			</div>
 			<h1
-				class="gallery-text relative p-3 rounded-3xl w-fit h-fit text-[3rem] opacity-0 fadeIn"
+				class="gallery-text relative p-3 rounded-3xl w-fit h-fit text-[3rem] opacity-0 fadeIn z-10"
 				style="grid-row-start: 1; grid-column-start: 1;"
 				bind:this={gallery}
 			>
@@ -300,7 +300,7 @@
 
 	.home {
 		display: grid;
-		grid-template-columns: repeat(36, minmax(0, 1fr));
+		grid-template-columns: repeat(36, 1fr);
 		grid-auto-rows: minmax(0, 1fr);
 
 		column-gap: 1.25rem;

@@ -9,7 +9,7 @@
 			<slot></slot>
 		</div>
 	{:else}
-		<div class="{$$restProps.class || ''} card" style={$$restProps.style}>
+		<div class="card {$$restProps.class || ''}" style={$$restProps.style}>
 			<slot></slot>
 		</div>
 	{/if}

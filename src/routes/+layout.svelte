@@ -1,10 +1,10 @@
 <script lang="ts">
 	import '../app.css';
-	import { page } from '$app/stores';
 
 	import { setGenerator, seeded, usingMath } from '$lib/random';
 
 	export let data;
+	export let params; params; // Cursed fix to remove unused variable warning
 
 	setGenerator(data.seed.length > 0 ? seeded(data.seed) : usingMath());
 </script>

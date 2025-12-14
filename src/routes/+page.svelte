@@ -4,10 +4,12 @@
 
 	const featuredImage = data.featuredImage;
 	const authorImage = data.authorImage;
+	const crown = data.crown;
+	const quoteIdx = data.quoteIdx;
 </script>
 
 <svelte:head>
     <title>Samuel Bruin - Portfolio</title>
 </svelte:head>
 
-<App {featuredImage} {authorImage} />
+<App {featuredImage} {authorImage} {crown} {quoteIdx}  />

@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { nextRandom } from '$lib/random';
 	import { onMount } from 'svelte';
+
+	export let quoteIdx: number;
+
 	const quotes = [
 		'wants to make a change.',
-		'matters.',
 		'likes to code.',
 		'creates.',
 		'does stuff.',
@@ -19,7 +20,7 @@
 		'likes bikes.'
 	];
 
-	let quote = quotes[Math.floor(nextRandom() * quotes.length)];
+	let quote = quotes[quoteIdx % quotes.length];
 
 	let element: HTMLSpanElement;
 

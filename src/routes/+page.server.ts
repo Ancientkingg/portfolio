@@ -6,8 +6,25 @@ export const load: PageServerLoad = async () => {
 
     const [featuredImages, authorImages] = await Promise.all([getImagesInfo(), getAuthorImages()]);
 
-    const featuredImage = selectRandomImage(featuredImages);
-    const authorImage = selectRandomImage(authorImages);
+	const crownsCount = 8;
+	const emojisCount = 4;
 
-    return { featuredImage, authorImage };
+	const emojiOrNot =
+		Math.random() < emojisCount / (emojisCount + crownsCount);
+
+	const crownIndex = Math.floor(
+		Math.random() * (emojiOrNot ? emojisCount : crownsCount)
+	);
+
+    console.log('Crown selected:', { emojiOrNot, crownIndex });
+
+    return {
+		featuredImage: selectRandomImage(featuredImages),
+		authorImage: selectRandomImage(authorImages),
+		crown: {
+			emojiOrNot,
+			index: crownIndex
+		},
+		quoteIdx: Math.floor(Math.random() * 100)
+	};
 };
