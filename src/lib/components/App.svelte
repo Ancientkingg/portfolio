@@ -29,9 +29,11 @@
 	onMount(() => {
 		let fadeInElements = [someone, who, gallery];
 		resizeObserver = new ResizeObserver(() => {
-			fadeInElements.forEach((el) => {
-				el.classList.remove('opacity-0');
-				el.classList.add('fadeIn');
+			fadeInElements.forEach((el, idx) => {
+				setTimeout(() => {
+					el.classList.remove('opacity-0');
+					el.classList.add('fadeIn');
+				}, idx * 300); // Don't forget to delay SomeoneQuote appropriately
 			});
 		});
 
@@ -45,9 +47,11 @@
 	});
 
 	const imageFadeIn = (event: Event) => {
-		const img = event.target as HTMLImageElement;
-		img.classList.remove('opacity-0');
-		img.classList.add('fadeIn');
+		setTimeout(() => {
+			const img = event.target as HTMLImageElement;
+			img.classList.remove('opacity-0');
+			img.classList.add('fadeIn');
+		}, Math.random() * 500);
 	};
 </script>
 
@@ -75,16 +79,16 @@
 			use:measure={(r) => (author_preview_height = Math.round(r.height * devicePixelRatio))}
 			class="h-full rounded-2xl overflow-hidden"
 		>
-		<!-- Enforce a 3/4 aspect ratio for the author image -->
+			<!-- Enforce a 3/4 aspect ratio for the author image -->
 			{#if author_preview_height}
 				<CldImage
 					on:load={imageFadeIn}
 					src={authorImage.src}
 					alt=""
 					height={author_preview_height}
-					width={Math.round((3/4) * author_preview_height)}
+					width={Math.round((3 / 4) * author_preview_height)}
 					quality={50}
-					class="object-cover h-full w-auto"
+					class="object-cover h-full w-auto opacity-0"
 				/>
 			{/if}
 		</div>
@@ -102,7 +106,7 @@
 				{#if gallery_preview_height}
 					<CldImage
 						on:load={imageFadeIn}
-						class="featured-image object-cover gallery-photo h-full w-auto opacity-0 fadeIn"
+						class="featured-image object-cover gallery-photo h-full w-auto opacity-0"
 						src={featuredImage.src}
 						alt=""
 						width={Math.round(
@@ -264,12 +268,12 @@
 		}
 	}
 
-	:global(img) {
+	/* :global(img) {
 		transition: opacity 0.5s;
 		animation-name: fadeIn;
 		animation-timing-function: ease-in-out;
 		animation-duration: 1.5s;
-	}
+	} */
 
 	@keyframes fadeIn {
 		0% {

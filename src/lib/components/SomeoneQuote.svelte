@@ -25,8 +25,10 @@
 	let element: HTMLSpanElement;
 
 	onMount(() => {
+		setTimeout(() => {
 		element.classList.add('fadeInSlow');
 		element.classList.remove('opacity-0');
+		}, 2 * 300);
 	});
 </script>
 
