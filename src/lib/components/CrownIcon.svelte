@@ -25,7 +25,9 @@
 	let crownIcon: HTMLSpanElement;
 
 	onMount(async () => {
-		const loader = crown.emojiOrNot ? crownImports[crown.index % crownImports.length] : emojiImports[crown.index % emojiImports.length];
+		const loader = crown.emojiOrNot
+			? crownImports[crown.index % crownImports.length]
+			: emojiImports[crown.index % emojiImports.length];
 		const mod = await loader();
 		svg = mod.default;
 
