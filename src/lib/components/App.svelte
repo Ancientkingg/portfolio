@@ -74,6 +74,11 @@
 		>
 			{#if author_preview_height}
 				<CldImage
+					on:load={(e) => {
+						const el = event.target;
+						el.classList.remove('opacity-0');
+						el.classList.add('fadeIn');
+					}}
 					src={authorImage.src}
 					alt="Author portrait"
 					height={author_preview_height}
@@ -96,7 +101,12 @@
 			>
 				{#if gallery_preview_height}
 					<CldImage
-						class="featured-image object-cover gallery-photo h-full w-auto"
+						on:load={(e) => {
+							const el = event.target;
+							el.classList.remove('opacity-0');
+							el.classList.add('fadeIn');
+						}}
+						class="featured-image object-cover gallery-photo h-full w-auto opacity-0 fadeIn"
 						src={featuredImage.src}
 						alt="Featured from gallery"
 						aspectRatio={featuredImage.width / featuredImage.height}
@@ -256,7 +266,7 @@
 		}
 	}
 
-	img {
+	:global(img) {
 		transition: opacity 0.5s;
 		animation-name: fadeIn;
 		animation-timing-function: ease-in-out;
