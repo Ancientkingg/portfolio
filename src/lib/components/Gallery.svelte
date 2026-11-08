@@ -1,18 +1,20 @@
 <script lang="ts">
 	import Gallery from 'svelte-gallery';
 	import GalleryImage from './GalleryImage.svelte';
-	import type { SvelteComponent } from 'svelte';
+	import GalleryLightbox from './GalleryLightbox.svelte';
+	import { setContext, type SvelteComponent } from 'svelte';
+	import type { ImageInfo } from '$lib/images';
 
-  export let images;
-
-	let rowHeight = 400;
-	// @ts-ignore
-	let imageComponent: typeof SvelteComponent = GalleryImage;
+	export let images: ImageInfo[];
+	let selected = -1;
+	const rowHeight = 400;
+	const imageComponent = GalleryImage as typeof SvelteComponent;
+	setContext('open-gallery-photo', (src: string) => {
+		selected = images.findIndex((image) => image.src === src);
+	});
 </script>
 
-<section class="gallery">
+<section class="gallery" aria-label="Photography gallery">
 	<Gallery {images} {rowHeight} {imageComponent} />
 </section>
-
-<style lang="postcss">
-</style>
+<GalleryLightbox {images} bind:selected />
